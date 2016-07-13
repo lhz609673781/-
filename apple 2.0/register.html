@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="img/apple.ico">
+<link href="css/basic.css" rel="stylesheet" type="text/css">
+<title>创建您的Apple ID</title>
+<style type="text/css">
+	.bottom{
+		background-color:#FFF;
+	}
+	.createbackground{
+		background:url(img/apple_id_recovery_2880x340.jpg) no-repeat;
+		height:175px;
+		width:100%;
+		text-align:center;
+		line-height:175px;
+		font-size:30px;
+		color:#FFF;
+	}
+	.center_form{
+		width:50%;
+		text-align:center;
+	}
+    .center_form p{
+        color: #666666;
+        font-size: 16px;
+        
+    }
+    .center_form p a{
+        color: #0088CC;
+        text-decoration: none;
+    }
+    .center_form p a:hover{
+        text-decoration: underline;
+    }
+    .p1{
+        margin: 30px 0;
+    }
+    .p2{
+        margin: 10px 0;
+    }
+    .country{
+        margin-top: 30px;
+    }
+	.main_form{
+	}
+	.main_form input{
+        border-radius: 4px;
+        width:68%;
+        border:1px solid #D6D6D6;
+        font-size: 14px;
+        line-height:150%;
+        padding: 5px 0 5px 14px;
+        margin-bottom: 15px;
+	}
+    .main_form select{
+        width: 70%;
+        border-radius: 4px;
+        width:70%;
+        border:1px solid #D6D6D6;
+        font-size: 14px;
+        line-height:150%;
+        padding: 5px 0 5px 14px;
+        margin-bottom: 15px;
+    }
+    .main_form .checkbox{
+        font-size: 12px;
+        color:#666666; 
+    }
+    .main_form .checkbox input{
+        width: 5%;
+        text-align: left;
+    }
+    .yanzhen img{
+        width:90px;
+        height:45px;
+        position: relative;
+        top: 18px;
+    }
+    .yanzhen input{
+        width: 25%;
+    }
+    .continue{
+        display: block;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #0088CC;
+        text-decoration: none;
+    }
+    .continue:hover{
+        text-decoration: underline;
+    }
+    #myname{
+        width: 32.3%;
+    }
+
+    #more{
+        width: 73%;
+        border-top: 1px solid #D4D4D4;
+        margin-top: 10px;
+    }
+    #more ul{
+        float: left;
+        margin-left:8%;
+    }
+    #more li{
+        list-style: none;
+        float:left;
+        margin-top:12px;
+        
+    }
+    #more li a{
+        color:#999999;
+        font-size: 12px;
+        text-decoration:none;
+        border-right: 1px solid #D4D4D4;
+        padding:0 5px;
+ 
+    }
+    #more span{
+        float: left;
+        font-size:12px;
+        color:#999999;
+        margin-top:15px;
+    }
+    #more .endli{
+        width:23px;
+        height: 23px;
+        background: url(img/CHNflag.png) no-repeat;
+        background-size: 23px 23px;
+    }
+</style>
+</head>
+
+<body>
+	<div class="top">
+    	<ul>
+        	<li><a id="logo" href="index.html"></a></li>
+            <li><a href="mac.html">Mac</a></li>
+            <li><a href="ipad.html">iPad</a></li>
+            <li><a href="iphone.html">iPhone</a></li>
+            <li><a href="support.html">技术支持</a></li>
+            
+            <li  id="shopping">
+            	<div>
+                	<ul>
+                    	<li>你的购物袋是空的</li>
+                        <li><a href="">购物袋</a></li>
+                        <li><a href="">收藏</a></li>
+                        <li><a href="">订单</a></li>
+                        <li><a href="">账户</a></li>
+                        <li><a href="login.html">登录</a></li>
+                    </ul>
+                </div>
+                
+            </li>
+        </ul>
+    </div>
+    
+    <div class="createbackground">创建您的 Apple ID</div>
+     
+	<div class="center_form">
+    	<p class="p1">只需一个 Apple ID，您即可访问 Apple 所有内容。<br/>
+		已有一个 Apple ID？<a href="#">在此查找&gt;</a></p>
+    	<form class="main_form" method="get" action="#">
+        	<input type="email" name="id" placeholder="name@example.com" /><br/>
+            <input type="password" name="pwd" placeholder="密码" /><br/>
+            <input type="password" name="pwda"  placeholder="确认密码" /><br/><br/>
+            
+            <input type="text" name="firstname" placeholder="名字" id="myname" />
+            <input type="text" name="lastname" placeholder="姓氏" id="myname" /><br />
+            <input type="datetime" name="datetime" placeholder="出生日期" />
+            
+            <hr class="form_hr"/>
+            <br />
+            <select name="securityquestion1">
+            	<option value="que1" disabled="yes" selected="yes">安全提示问题1</option>
+                <option value="singer">你在学生时代最喜欢哪个歌手或乐队？</option>
+                <option value="parentswhere">你的父母是在哪里认识的</option>
+                <option value="pet">你养的第一个宠物叫什么名字？</option>
+            </select>
+            <br />
+            <input type="text" name="answer1" placeholder="答案" />
+            <br /><br />
+            <select name="securityquestion2">
+            	<option value="que2" disabled="yes" selected="yes">安全提示问题2</option>
+                <option value="nickname">你童年时代的绰号是什么？</option>
+                <option value="book">你小时候最喜欢的一本书是什么？</option>
+                <option value="work">你的理想工作是什么？</option>
+            </select>
+            <br />
+            <input type="text" name="answer2" placeholder="答案" />
+            <br /><br />
+            <select name="securityquestion3">
+            	<option value="que3" disabled="yes" selected="yes">安全提示问题3</option>
+                <option value="street">你从小长大的那条街叫什么？</option>
+                <option value="CD">你购买的第一张专辑是什么？</option>
+                <option value="airport">你第一次坐飞机是去哪里的？</option>
+            </select>
+            <br />
+            <input type="text" name="answer3" placeholder="答案" />
+            <br />
+            <p class="p2">这些问题将用于验证您的身份，以及在您忘记密码时恢复您的密码。</p>
+            <br />
+            <hr class="form_hr" />
+            <select name="national" class="country">
+            	<option value="china"  selected="yes">中国</option>
+                <option value="us">美国</option>
+                <option value="uk">英国</option>
+                <option value="jp">日本</option>
+            </select>
+            <br />
+            <div class="checkbox">
+            <input type="checkbox" name="note">获取有关 Apple 产品、服务、软件更新等的公告、推荐和更新。
+            <br />
+            <input type="checkbox" name="note">获取有关音乐、App、电影、电视、书籍、播客等的推荐、最新发布、特别优惠和独家内容。
+            </div>
+            <div class="yanzhen" >
+			<img src="img/yanzheng.jpg" >
+            <input type="text" name="yanzhen" placeholder="输入图中验证码" /><br/>
+            </div>
+
+            <div>
+            <p>Apple 致力于保护您的隐私。<a href="https://www.apple.com/privacy/">了解更多…</a></p>
+       		<a href="#" class="continue">继续</a>
+            </div>
+       </form>
+       
+    </div>
+    
+    <div id="more">
+        <span>在 Apple Store 在线商店 (400-666-8800) 上在线购物，前往 Apple Store 零售店或查找 经销商来购物。</span>
+        <ul>
+            <li><a href="">Apple 资讯</a></li>
+            <li><a href="">网站地图</a></li>
+            <li><a href="">热点新闻</a></li>
+            <li><a href="">RSS 提要</a></li>
+            <li><a href="">联系我们</a></li>
+            <li class="endli"></li>
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <span class="bottom_text1">Copyright &copy; 2016 Apple Inc. 保留所有权利。</span>
+        <ul>
+        	<li><a href="" id="bottom_a1">隐私政策</a></li>
+            <li><a href="">使用条款</a></li>
+        </ul>
+    </div>
+    
+    <a href="#top" id="back_top"></a>
+</body>
+</html>

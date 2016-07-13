@@ -1,0 +1,69 @@
+/*==============焦点图================*/
+#main_promo{
+	height:600px; 
+	width:100%;
+	margin-top:40px;
+	margin-left:-510px; 
+	position:relative;  
+	top:15px;  
+	left:50%; 
+	overflow:hidden; 
+	z-index:0; 
+	}
+.promoWD{
+	width:1000px;
+	margin:0 auto; 
+	position:relative; 
+	}
+.slide{
+	display:block; 
+	float:left; 
+	width:1920px;
+	}
+.a1{
+	position:absolute;
+	top:100px;
+	}
+.a1_t{
+	
+}
+.a2{
+	float:left;
+}
+.a2_t{
+	position:relative;
+	top:220px;
+	left:8%;
+	font-size:28px;
+	font-family:"华文宋体";
+}
+.slide p{
+	margin-left:80px;
+	font-size:27px;
+	position:relative;    
+	left:10%;
+	font-family:"华文宋体";
+}
+#dots{
+	height:13px; 
+	position:absolute;
+	bottom:13px; 
+	left:429px; 
+	z-index:99;
+	}
+#dots li{
+	width:23px; 
+	height:13px;
+	float:left; 
+	}
+#dots li a{ 
+	width:10px; 
+	display:block;
+	height:10px;
+	background-color:#7f0705;
+	border:1px solid #FFFFFF;
+	}
+#dots li.act a{
+	background-color:#000000;
+	}
+/*==============焦点图 end================*/
