@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>作业案例</title>
+	<script type="text/javascript" src="lhz.js"></script>
+	<script type="text/javascript">
+		function del(obj){
+			var tr=obj.parentNode.parentNode;
+
+			var tbody=tr.parentNode;
+			tbody.removeChild(tr);
+			if(window.openDatabase){
+				db.transaction(function(transaction){
+					//删除sno的为tr.firstChild.innerHTML的那一行
+					transaction.executeSql("delete from student where sno="+tr.firstChild.innerHTML,[]);
+				})
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>添加学生</h1>
+	<hr />
+	<p>学号：<input type="text" name="sno" id="sno"></p>
+	<p>学生名：<input type="text" name="sname" id="sname"></p>
+	<p>年龄：<input type="text" name="age" id="age"></p>
+
+	<input type="button" name="btn" id="btn" value="添加" >
+
+	<hr>
+
+	<table border="1" width="500px">
+		<thead>
+			<tr>
+				<td>学生号</td>
+				<td>学生名</td>
+				<td>年龄</td>
+				<td><input type="button" name="bt" value="删除" onclick="del(this)"></td>
+			</tr>
+		</thead>
+		<tbody id="content">
+			
+		</tbody>
+	</table>
+	<script type="text/javascript">
+			
+			var db;
+			if(window.openDatabase){
+				db=openDatabase("studentss",1.0,"存储学生信息",100*100);
+				db.transaction(function(transaction){
+					transaction.executeSql("create table if not exists student(sno int auto_increment primary key,sname text,sage int)",[]);
+				})
+			}
+
+			//window.onload=function(){}
+			lhz.addEvent("btn","click",  function(){
+				//判定数据库及表是否存在
+				if(!db){
+					return;
+				}
+				//从界面取出要存的值
+			var name=lhz.$("sname");
+			var age=lhz.$("age");
+			var tbody=lhz.$("content");
+			var sno=lhz.$("sno");
+
+			//先存到数据库，插入数据
+			db.transaction(function(transaction){
+				transaction.executeSql("insert into student(sno,sname,sage) values(?,?,?)",[sno.value,sname.value,age.value]);
+			});
+			//清空tbody中原有的数据
+			tbody.innerHTML="";
+
+			//重新从数据库查询最新的结果
+				db.transaction(function(transaction){
+					transaction.executeSql("select * from student",[],function(transaction,results){
+						for(var i=0;i<results.rows.length;i++){
+							var row=results.rows.item(i);
+
+							var tdslen=document.getElementsByTagName("td");
+							var newRow=tbody.insertRow(tbody.rows.length);
+							var cell=newRow.insertCell(0);
+							cell.innerHTML=row['sid'];
+							var cell1=newRow.insertCell(1);
+							cell1.innerHTML=row['sname'];
+							var cell2=newRow.insertCell(2);
+							cell2.innerHTML=row['sage'];
+							var cell3=newRow.insertCell(3);
+							cell3.innerHTML=tdslen[3].innerHTML;
+
+							tbody.appendChild(newRow);
+						}
+				})
+			})
+		})
+		
+			
+				
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+	</script>
+</body>
+</html>
