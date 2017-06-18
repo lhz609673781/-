@@ -1,0 +1,197 @@
+@charset "utf-8"
+*{
+	
+	margin:0px auto;
+	padding:0px;
+	}
+/*body{
+	width:1500px;
+	height:600px;
+	background: url(images/banner.jpg) no-repeat;
+	background-size: cover;
+	color: #FAFAF7;
+}*/
+a{
+	text-decoration: none;
+}
+
+#head2{
+	margin-right: 60px;
+	padding-top: 30px;
+	width:100%;
+	height:30px;
+	}
+#head2 li{
+	float:right;
+	width:50px;
+	height:40px;
+	list-style:none;
+}
+
+	
+#header{
+	clear:both;
+	background:url(images/banner.jpg) no-repeat;
+	background-size:cover;
+	width:100%;
+	height:380px;
+	}
+
+
+#header p{
+	font-size:30px;
+	font-weight:bold;
+	font-style:italic;
+	color:#FFF;
+	line-height:160px;
+	margin-left: 400px;
+	}
+#header #d1{
+	position: relative;
+	top:70px;
+	margin-left: 480px;
+	font-size:60px;
+	}
+
+
+#myform{
+	display:none;
+	color:white;
+	background-color:#272822;
+	opacity: 0.8;
+	width:300px;
+	height:200px;
+	padding-left: 60px;
+	padding-top:30px;
+	position: absolute;
+	top:300px;
+	left:500px;
+	border-radius: 15px;
+}
+.uname,.pwd{
+	color:white;
+	font-weight:bold;
+	font-size: 16px;
+	background-color:#272822;
+	opacity: 0.5;
+	border:none;
+	border-bottom:1px solid #FAFAF7;
+	margin-top: 15px;
+}
+#sub_result{
+	width:80px;
+}
+#btn{
+	margin-top:20px;
+	margin-left:40px;
+	color: white;
+	border:none;
+	background: none;
+}
+#btn2{
+	margin-top:20px;
+	margin-left: 100px;
+	color: white;
+	border:none;
+	background: none;
+}
+#submit_t,#out{
+	font-size:14px;
+	color:black;
+	
+}
+#total a{
+	display: inline-block;
+	position: relative;
+	bottom:202px;
+	width:120px;
+	height:203px;
+	text-align: center;
+	color: #C1BFBF;
+	font-size: 120px;
+	font-weight:bolder;
+	padding-right: 20px;
+	margin-left:30px;
+	background-color:rgba(0,0,0,0.1); 
+	}
+.to_left{
+	right: 10px;
+}
+.to_right{
+	left: 970px;
+}
+#shop{
+	background: url(images/shop.png) no-repeat -380px -20px;
+}
+
+#look{
+	color:#666666;
+	width:200px;
+	height:auto;
+	position: relative;
+	right:580px;
+	top:100px;
+	background: url(images/5.jpg);
+	opacity: 0.8;
+	padding-top: 10px;
+}
+#look li{
+	width:150px;
+	text-align: center;
+	line-height: 30px;
+	
+}
+#title_food{
+	border-bottom:1px solid #666666;
+	list-style:none;
+}
+#shoppingcar{
+	background: rgba(0,0,0,0.5);
+	width:650px;
+	height:auto;
+	position: absolute;
+	right:150px;
+	top:60px;
+	z-index: 3;
+	display: none;
+	text-align: center;
+	
+}
+#shoppingcar p{
+	width:200px;
+	color:white;
+	line-height:30px;
+	text-align: center;
+	margin-bottom: 5px;
+	border-bottom:1px solid #666666;
+}
+#shoppingcar table{
+	width:90%;
+	margin-top: 5px;
+	padding-bottom: 5px;
+}
+#shoppingcar table tr td{
+	color: white;
+	border:none;
+	width:10%;
+	text-align:center;
+}
+
+.delete,.addfoodnum{
+	font-size: 14px;
+	background-color: #90A071;
+	opacity: 0.8;
+}
+#refirm_buy{
+	width:60px;
+	height:20px;
+	position: relative;
+	bottom:5px;
+	right:5px;
+	font-size: 12px;
+	color:white;
+	margin-top:10px;
+	background-color: #90A071;
+	opacity: 0.8;
+	border-radius: 15px;
+}
