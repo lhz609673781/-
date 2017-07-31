@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>理赔报表</title>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- font-awesome -->
+<link href="lib/font-awesome/font-awesome.min.css" rel="stylesheet" media="screen">
+<!-- layui -->
+<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css">
+<!-- Custom -->
+<link rel="stylesheet" type="text/css" href="lib/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="lib/js/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="lib/js/easyCookie.js"></script>
+<!-- 判断用户登录状态 -->
+<!-- <script>
+	var nickName = easyCookie.get_nickName();
+	if(!nickName){
+		window.location.href = "login.html";
+	}
+</script> -->
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap">
+		<!-- header -->
+		<div class="header">
+			<div class="logo fl">
+			    	<a href="#"><img src="images/logo.png" /></a>
+			</div>
+			<div class="control">
+					<a href="#"><i class="icon-reorder"></i></a>
+			</div>
+			<ul class="layui-nav topBar fr">
+				<li class="layui-nav-item">
+					<a href="#" class="username"></a>
+					<dl class="layui-nav-child">
+						<dd><a href="#" class="logout">注销</a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<!-- navBar -->
+		<ul class="layui-nav layui-nav-tree layui-nav-side" id="navBar">
+			<li class="layui-nav-item">
+				<a href="#"><i class="icon-file-alt custom-icon"></i>理赔报表</a>
+				<dl class="layui-nav-child">
+			      		<dd><a href="#" data-src="mainContent/clientSeacher.html"><i class="icon-github-alt custom-icon"></i>客户查询</a></dd>
+			      		<dd><a href="#" data-src="mainContent/companySeacher.html"><i class="icon-building custom-icon"></i>公司查询</a></dd>
+			    	</dl>
+			</li>
+		</ul>
+		<!-- mainContent -->
+		<div class="mainContent"></div>
+	</div>
+
+	<script type="text/javascript" src="lib/js/system-config.js"></script>
+	<script type="text/javascript" src="lib/layui/layui.js"></script>
+	<!-- 引入element模块 -->
+	<script type="text/javascript">
+		layui.use('element', function(){
+  			var element = layui.element();
+		});
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

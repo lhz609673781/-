@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>运单查询</title>
+	<link rel="stylesheet" type="text/css" href="../lib/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../css/waybillSeacher.css" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css" />
+</head>
+<body id="wallbill-body">
+	<div class="main-content">
+		<div id='information-entry'>
+			<strong class="info-entry">运单信息录入</strong>
+		</div>
+
+		<form class="layui-form" action="">
+			<div class="layui-inline">
+				<label class="layui-form-label">运单编号：</label>
+				<div class="layui-input-inline">
+					<input type="text" id="waybillId" name="waybillNumber" placeholder="012345678910" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" id='waybillTime' placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">订单状态：</label>
+				<div class="layui-input-inline">
+					<select name="order-status">
+						<option value="">待处理</option>
+						<option value="0">待处理</option>
+						<option value="1">已审核</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">托运时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="data" placeholder="请输入日期" class="layui-input" onclick="layui.laydate({elem: this})">
+				</div>
+			</div>
+
+		</form>
+
+		<div id="entry-oparation">
+			<strong class="wayBill-entry">运单录入</strong>
+			<button type='button' class="delGoods-btn">删除货物</button>
+			<button type='button' class="addGoods-btn">添加货物</button>
+		</div>
+
+		<table class="layui-table waybill-table">
+			<caption>
+				<col width="50">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="100">
+				<col width="130">
+			</caption>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>品名</th>
+					<th>型号</th>
+					<th>件数</th>
+					<th>包装</th>
+					<th>重量/顿</th>
+					<th>体积</th>
+					<th>保价金额</th>
+					<th>计费方式</th>
+					<th>运价</th>
+				</tr>
+			</thead>
+			<tbody id="showWaybillSeacher"></tbody>
+		</table>
+
+		<div class="operation-btn">
+			<button type="text" class="layui-btn operation-btns layui-btn-warm">保存</button>
+			<button type="text" class="layui-btn operation-btns">取消</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="../lib/layui/layui.js"></script>
+	<script type="text/javascript">
+		layui.use(['layer','element','laydate','form'],function(){
+			var layer = layui.layer,
+				element = layui.element(),
+				form = layui.form();
+		})
+	</script>
+	<script type="text/javascript" src="../lib/js/jsrender-min.js"></script>
+	<script type="text/x-jsrender" id="waybillSearchTable">
+		var i;
+		<tr>
+			<td>{{i}}</td>
+			<td>
+				<span class="productName">{{:productName}}</span>
+			</td>
+			<td>
+				<span class="model">{{:model}}</span>
+			</td>
+			<td>
+				<span class="productNumber">{{:productNumber}}</span>
+			</td>
+			<td>
+				<span class="paking">{{:paking}}</span>
+			</td>
+			<td>
+				<span class="weight">{{:weight}}</span>
+			</td>
+			<td>
+				<span class="volume">{{:volume}}</span>
+			</td>
+			<td>
+				<span class="value">{{:value}}</span>
+			</td> 
+			<td>
+				<select name="" multiple class="charge">
+					<option value="">{{:charge[0]}}</option>
+					<option value="">{{:charge[1]}}</option>
+					<option value="">{{:charge[2]}}</option>
+				</select>
+			</td>
+			<td>
+				<span class="freight">{{:freight}}</span>
+			</td>
+		</tr>
+		i++;
+	</script>
+	<script type="text/javascript" src="../lib/js/easy.ajax.js"></script>
+	<script type="text/javascript" src="../lib/js/function.js"></script>
+	<script type="text/javascript" src="../js/waybillSeacher.js"></script>
+</body>
+</html>

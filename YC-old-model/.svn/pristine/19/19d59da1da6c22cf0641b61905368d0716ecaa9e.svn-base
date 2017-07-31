@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>理赔报表</title>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- font-awesome-fa -->
+<link href="lib/font-awesome-fa/font-awesome.min.css" rel="stylesheet" media="screen">
+<!-- layui -->
+<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css">
+<!-- animate -->
+<link href="lib/css/animate.min.css" type="text/css" rel="stylesheet">
+<!-- Custom -->
+<link rel="stylesheet" type="text/css" href="lib/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap animated flipInX">
+		<!-- header -->
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.png" /></a>
+			</div>
+		</div>
+		<!-- form -->
+		<div class="form">
+			<div class="form-group">
+				<label for="userName" class="form-label"><i class="fa fa-user"></i></label>
+				<input type="text" placeholder="请输入用户名/手机" class="form-control" id="userName" />
+			</div>
+			<div class="form-group">
+				<label for="password" class="form-label"><i class="fa fa-lock"></i></label>
+				<input type="password" placeholder="请输入密码" class="form-control" id="password" />
+			</div>
+			<div class="form-group">
+				<a href="#" class="form-btn" id="submit">登 录</a>
+			</div>
+		</div>
+		<div class="error"></div>
+	</div>
+    <script type="text/javascript" src="lib/js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="lib/js/easyCookie.js"></script>
+	<script type="text/javascript" src="lib/js/json2.js"></script>
+    <script type="text/javascript" src="lib/js/system-config.js"></script>
+	<script type="text/javascript" src="lib/layui/layui.js"></script>
+	<!-- 引入layer模块 -->
+	<script type="text/javascript">
+		layui.use('layer', function(){
+			var layer = layui.layer;
+		});
+	</script>
+	<script type="text/javascript" src="lib/js/easy.ajax.js"></script>
+    <script type="text/javascript" src="lib/js/placeholder.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

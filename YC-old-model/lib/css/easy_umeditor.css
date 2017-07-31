@@ -1,0 +1,16 @@
+
+/*使用layUI会导致百度编辑器部分功能无效，但预览有效*/
+
+.edui-editor-body ul,.edui-editor-body ul li{
+    list-style-type: disc;
+}
+.edui-editor-body ol,.edui-editor-body ol li{
+    list-style-type: decimal;
+}
+.edui-editor-body ol,.edui-editor-body ul{
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
