@@ -1,0 +1,193 @@
+/*公共部分*/
+.text_center{text-align: center;}
+.barCode-title{
+	padding:20px 15px;
+	color:#636363;
+}
+.barCode-title .weui-flex__item{margin-left:10px;}
+.barCode-title .weui-flex__item .c_orange{color:#ff7f00;margin-left:4px;}
+.barCode-title .s_more{letter-spacing: -4px;}
+.barCode-list{padding:0 15px 10px;}
+.barCode-list{margin-bottom: 60px;}
+.barCode-list-part{
+	padding:12px 10px;
+	border-radius: 8px;
+	background:#fff;
+	margin-bottom: 10px;
+	border:1px solid #dedede;
+	position:relative;
+}
+.barCode-list-part:active{
+	background: #ececec;
+}
+.barCode-list-part .part_top{margin-bottom: 4px;}
+.barCode-list-part .part_bottom{color:#636363;font-size:15px;}
+.barCode-list-part .weui-flex__item {padding-left:4px;padding-right:46px;/* background:red; */}
+.barCode-list-part .listpart_share{
+	position:absolute;
+	top:32px;
+	right:0px;
+	width:56px;
+	height:44px;
+}
+.barCode-list-part .listpart_share:before{
+	content:'';
+	display: block;
+	width:24px;
+	height:24px;
+	background:url(../images/share.png) no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top:12px;
+	right:16px;
+}
+/* 状态提示 */
+.barCode-list-part .btn_mark{
+	position:absolute;
+	top:10px;
+	right:5px;
+	font-size:14px;
+	letter-spacing:1px;
+}
+.barCode-list-part .btn_mark.btn_green{
+	color:#159fe5;
+}
+.barCode-list-part .btn_mark.btn_blue{
+	color:#00c3d9;
+}
+.barCode-list-part .btn_mark.btn_yellow{
+	color:#f57c02;
+}
+
+/*tab2部分*/
+
+/*tab2选项卡地址*/
+#tab2 .tabbtn{text-align: center;padding-bottom: 15px;margin-bottom: 10px;}
+#tab2 .tabbtn{padding:10px 0;border-bottom: 2px solid transparent;color:#fff;text-align:center;}
+#tab2 .tabbtn.current{border-bottom: 2px solid #ffff00;}
+
+#tab2 .tabBtn{background:#30aafa;padding-bottom: 10px;margin-bottom: 10px;}
+#tab2 .tabBtn .tab_ul{padding:0 15px;}
+#tab2 .barCode-title{padding:3px 10px;}
+#tab2 .barCode-list{margin-bottom: 0;padding:5px 15px 0;}
+#tab2 .tabCon{margin-bottom: 80px;}
+
+
+/*导航定位*/
+.weui-footer_fixed-bottom{bottom:0;}
+.weui-tabbar__icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+}
+.weui-tabbar__icon.a_tab1{
+	background-image: url(../images/icon_nav1.png);	
+}
+.weui-tabbar__icon.a_tab2{
+	background-image: url(../images/icon_nav2.png);
+}
+.weui-tabbar__icon.a_tab3{
+	background-image: url(../images/icon_nav3.png);
+}
+.weui-tabbar__icon{
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size:100% auto;
+}
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__icon{
+	background-position: left top;
+}
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label{
+	color:#31acfa;
+}
+/*日期+搜索*/
+.weui-search-bar{
+	border:1px solid #9bdbfd;
+	border-right:none;
+	border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+	background:#61c8fc;
+	padding:0 10px;	
+}
+.f_search{
+	background:#30aafa;
+	padding:20px 0;
+}
+#tab2 .t_date{
+	padding: 5px 0 5px 10px;
+	position:relative;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+#tab2 .t_date_hd .weui-label{
+	width:42px;
+	color:#fff;
+}
+#tab2 .t_date_show{
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+.t_date_bd{
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.t_date_bd .weui-input{color:#fff;}
+
+.t_date_ft.weui-icon-clear{
+    cursor: pointer;
+    font-size:16px;
+    color:#fff;
+    padding-right:10px;
+}
+.weui-search-bar__box .weui-search-bar__input{
+	padding:8px 0;
+	font-size: 16px;
+	text-indent: 4px;
+	height:auto;
+	line-height: normal;
+	color:#fff;
+}
+.weui-search-bar__label,.weui-search-bar__box{
+	background:#61c8fc;
+}
+.weui-icon-search{
+	color: #fff;
+	font-size: 20px;
+	line-height: 34px;
+	padding: 0 4px;
+	margin-left:-8px;
+}
+.weui-search-bar__box{
+	padding-left:0;
+}
+.weui-search-bar__cancel-btn,.weui-search-bar__box .weui-icon-clear{
+	line-height:34px;
+	color:#fff;
+}
+.weui-search-bar__box .weui-icon-clear{
+	font-size:16px;
+	padding:0;
+}
+.weui-search-bar:before{
+	border-top:none;
+}
+.weui-search-bar:after{
+	border-bottom: none;
+}
+.weui-search-bar__form:after{
+	height:0;
+	width:0;
+}
+/* 回单消息 */
+.bc_part_link .last_bottom{
+	font-size:15px;
+	color:#f72900;
+}
+input::-webkit-input-placeholder {color:#fff;}
+input:-ms-input-placeholder {color:#fff;}

@@ -1,0 +1,90 @@
+@charset "utf-8";
+/*默认样式开始*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body{font:16px/1 Microsoft YaHei,"\5b8b\4f53",Helvetica,Arial,sans-serif;height: 100%;}
+img{border:none; vertical-align:top;width: 100%;display: block;}
+em,strong{font-style:normal;font-weight:normal;}
+ul,li{list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+/* link */
+a:link,a:visited{color:#FFFFFF;text-decoration:none;}
+a:hover{color:#FFFFFF;text-decoration:underline;}
+a{-webkit-tap-highlight-color:transparent;}
+input[type="text"], input[type="submit"], input[type="reset"], input[type="button"], button {
+    -webkit-appearance: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+input[type=file]{outline: none;}
+input:focus,textarea:focus{outline: none;}
+input:focus{-webkit-tap-highlight-color:rgba(255,0,0,0);-webkit-user-modify:read-write-plaintext-only;}
+/*去除input默认样式*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1}
+
+/* placeholder字体颜色 */
+input::-webkit-input-placeholder {color:#adadad;}
+input:-moz-placeholder {color:#adadad;}
+input::-moz-placeholder {color:#adadad;}
+input:-ms-input-placeholder {color:#adadad;}
+
+.fl{float:left;}
+
+/* 页面通用样式 */
+body{background:#f0f1f5;padding-bottom: 1.07rem;}
+.wrap{width:10rem;margin:0 auto;}
+
+/* 底部导航 */
+.footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:1.07rem;
+    line-height: 1.07rem;
+    background:#fff;
+    border-top:1px solid #c8c8c8;
+}
+.footer>div{
+    width:50%;
+    float:left;
+    text-align: center;
+}
+.footer .i-icon{
+    display: inline-block;
+    width:0.67rem;
+    height:0.67rem;
+    margin-top:0.2rem;
+   vertical-align: -0.2rem;
+   margin-right:0.27rem;
+}
+.footer>div>a{
+    color:#666;
+    text-decoration: none;
+}
+.footer>div>a.active{
+    color:#fe5900;
+}
+.footer .index .i-icon{
+     background:url(../img/index.png) no-repeat center;
+     background-size: 0.67rem 0.67rem; 
+}
+.footer .index.active .i-icon{
+     background:url(../img/a-index.png) no-repeat center;
+     background-size: 0.67rem 0.67rem; 
+}
+.footer .mine .i-icon{
+     background:url(../img/user.png) no-repeat center;
+     background-size: 0.67rem 0.67rem; 
+}
+.footer .mine.active .i-icon{
+     background:url(../img/a-user.png) no-repeat center;
+     background-size: 0.67rem 0.67rem; 
+}
+

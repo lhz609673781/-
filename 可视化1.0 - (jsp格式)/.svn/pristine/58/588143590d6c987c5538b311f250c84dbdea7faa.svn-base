@@ -1,0 +1,31 @@
+log4j.rootLogger=WARN,systemOut,logDailyFile,errorFile
+
+log4j.appender.systemOut=org.apache.log4j.ConsoleAppender
+log4j.appender.systemOut.layout=org.apache.log4j.PatternLayout
+log4j.appender.systemOut.layout.ConversionPattern=[%-5p] [%-22d{yyyy/MM/dd HH:mm:ssS}] [%c(%L)] %n%m%n
+log4j.appender.systemOut.Threshold=DEBUG
+
+log4j.appender.logDailyFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.logDailyFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logDailyFile.layout.ConversionPattern=%-5p %-22d{yyyy/MM/dd HH:mm:ssS} %c(%L) %n%m%n
+log4j.appender.logDailyFile.Threshold=DEBUG
+log4j.appender.logDailyFile.ImmediateFlush=TRUE
+log4j.appender.logDailyFile.Append=TRUE
+log4j.appender.logDailyFile.File=logs/ksh/debug
+log4j.appender.logDailyFile.DatePattern='.'yyyy-MM-dd-HH-mm'.log'
+log4j.appender.logDailyFile.Encoding=UTF-8
+
+log4j.appender.errorFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.errorFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logDailyFile.layout.ConversionPattern=%-5p %-22d{yyyy/MM/dd HH:mm:ssS} %c(%L) %n%m%n
+log4j.appender.errorFile.Threshold=ERROR
+log4j.appender.errorFile.ImmediateFlush=TRUE
+log4j.appender.errorFile.Append=TRUE
+log4j.appender.errorFile.File=logs/ksh/error
+log4j.appender.errorFile.DatePattern='.'yyyy-MM-dd-HH-mm'.log'
+log4j.appender.errorFile.Encoding=UTF-8
+
+log4j.logger.cn.ycgwl=DEBUG
+log4j.logger.org.apache.zookeeper=WARN
+log4j.logger.org.springframework=WARN
+

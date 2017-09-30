@@ -1,0 +1,10 @@
+/*第一次登录界面样式*/
+#ModalLogin .modal-body{padding:30px 15px;}
+#ModalLogin .modal-body input:focus{border:1px solid #597ecf;}
+#ModalLogin .modal-body .form_contain{font-size:14px;position:relative;width:310px;margin:0 auto;}
+#ModalLogin .modal-body .form_contain+.form_contain{margin-top:15px;}
+#ModalLogin .modal-body .login_label{font-weight:400;}
+#ModalLogin .modal-body .login_input{margin-left:6px;font-size:14px;width:240px;border:1px solid #dedede;height:30px;border-radius:4px;text-indent:4px;}
+#ModalLogin .modal-body .form_contain>span{position:absolute;top:0;right:24px;height:30px;line-height:30px;cursor:pointer;}
+#ModalLogin .modal-body .form_contain.login_btn{text-align:center;margin-top:25px;}
+#ModalLogin .login_btn>.btn{padding:3px 0;width:82px;background:#597ecf;border:1px solid #597ecf;}

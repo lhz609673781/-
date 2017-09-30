@@ -1,0 +1,140 @@
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color:#333;
+}
+.demos-title {
+  text-align: center;
+  font-size: 34px;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%;
+}
+
+.demos-sub-title {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+.demos-header {
+  padding: 35px 0;
+}
+
+.demos-content-padded {
+  padding: 15px;
+}
+
+.demos-second-title {
+  text-align: center;
+  font-size: 24px;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+/*公共样式*/
+.clearfix:after{content:"";display:block;clear:both;visibility:hidden;height:0} 
+.clearfix{zoom:1}
+.fl{float:left;}
+.fr{float:right;}
+.hide{
+	display: none;
+}
+.relative{
+	position: relative;
+}
+em{
+	font-style:normal;
+}
+/*字体颜色*/
+.color-blue{
+	color:#02afff !important;
+}
+.color-red{
+	color:#fa3030 !important;
+}
+.color-green{
+	color:#39c86c !important;	
+}
+.color-orange{
+	color:#ff7f00 !important;
+}
+.color-gray{
+	color: #636363 !important;
+}
+.color-share{
+	color:#65c15c !important;
+}
+/*天数，定位次数颜色*/
+.color-mark{
+	color:#ff6633 !important;
+}
+
+/*单行文本省略*/
+.one-line-hide{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+/*多行文本省略*/
+.more-line-hide{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+/*图片*/
+img{
+	vertical-align: top;
+}
+
+/*解决ios中弹出框偏移问题*/
+.weui-dialog, .weui-toast{
+	-webkit-transform: scale(1) translate(-50%, -50%) !important;
+	transform: scale(1) translate(-50%, -50%) !important;
+}
+
+/*解决ios在微信端出现的内阴影问题*/
+textarea,input{
+　box-shadow:0px 0px 0px rgba(0,0,0,0);
+  -webkit-appearance:none;
+}
+
+/*iphone5验证码遮盖*/
+.weui-vcode-btn{
+	margin-left:0;
+	padding:0 0.6em 0 0.6em;
+	font-size:16px;
+}
+
+/* 清除select下拉框箭头*/
+select{   
+  appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none;   
+}   
+
+/*英文数字自动换行*/
+.wrap-line{
+	word-break : break-all;
+	word-wrap:break-word;
+}
+  
+/*覆盖框架原样式*/
+.weui-btn_primary{background:#31acfa;}
+.weui-btn_primary:not(.weui-btn_disabled):active{background:#2d9ee6;}
+.weui-vcode-btn{color:#31acfa;}
+.weui-vcode-btn:active{color:#2fa4ef;}

@@ -1,0 +1,102 @@
+/*样式初始化*/
+.weui-cells{background-color:transparent;}
+.weui-cells_checkbox .weui-icon-checked:before{
+	font-size:20px;
+	color:#31acfa;
+}
+.weui-cells_checkbox .weui-check:checked + .weui-icon-checked:before{
+	color:#31acfa;
+}
+.weui-cells:before{
+	border-top:none;
+}
+.text_right{text-align: right;}
+.pad_left{padding-left:4px;}
+/*列表标题*/
+.position_title{
+	position:relative;
+	font-size: 14px;
+	color:#636363;
+	background-color:#fff;
+	margin-bottom: 10px;
+}
+.pt_more{
+	/*background:pink;*/
+    position: absolute;
+    height: 100%;
+    line-height: 53px;
+    right: 12px;
+    padding: 0 10px;
+    top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.pt_more .s_more{letter-spacing: -2px;}
+.p_allcheck .weui-cell__bd{padding-left:10px;}
+.p_allcheck .weui-cell__bd .weui-flex{
+	-webkit-align-items: center;
+	align-items: center;
+}
+.p_allcheck .weui-cell__bd img{width:30px;margin-top:7px;}
+.p_allcheck .weui-cell__bd .pt_margin_left{margin-left:5px;font-size:15px;color:#333;}
+.p_allcheck .weui-cell__bd .pt_margin_left>span{margin-left:15px;}
+.position_title .input_all{padding: 6px 0.35em 6px 0;}
+
+/*列表内容*/
+.position_list{background:#fff;}
+.position_list_part{
+	position:relative;
+}
+.position_list_part .weui-cell{
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	padding: 10px 15px 10px 0;
+}
+.position_list_part .weui-flex.big_size{
+	font-size: 17px;
+	color:#000;
+}
+.position_list_part .weui-flex{
+	font-size:15px;
+	color:#636363;
+	padding:2px 0;
+}
+.position_list_part .pl_out,.position_list_part .pl_outed{
+	position:absolute;
+	top:10px;
+	right:5px;
+	padding:4px 15px;
+	color:#fff;
+	background:#f49d00;
+	border-radius: 6px;
+	font-size: 16px;	
+}
+.position_list_part .pl_out:active{
+	background:#db8d00;
+}
+.position_list_part .pl_outed{
+	background:transparent;
+	color:#636363;
+	padding:4px 0;
+}
+.position_list .input_one{
+	padding-bottom:20px;
+	padding-left:15px;
+}
+.pl_outed.btn-yellow{
+	color:#f57c02;
+}
+/*扫码上报位置*/
+.position_head{padding:25px 15px;background:#37b8fb;}
+.position_head>.fr,.position_head>.fl{
+	width:50%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	color:#fff;
+}
+.position_head>.fr>a,.position_head>.fl>a{color:#fff;display: block;}
+.position_head>.fr img,.position_head>.fl img{
+	width:65px;
+}
+.position_head>.fr{border-left:1px solid #d6effe;}

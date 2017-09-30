@@ -1,0 +1,5 @@
+.margin-top{margin-top:0;}
+#form .weui-cell{background-color:#fff;}
+.weui-select{height: 1.41176471em;line-height: 1.41176471;}
+.apply_status{color:#F43530;font-size:15px;margin-top:0;padding:10px 0;}
+.apply_status.weui-cells:before{border-top:none;} 

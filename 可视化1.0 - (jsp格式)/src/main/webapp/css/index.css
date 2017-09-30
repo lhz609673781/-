@@ -1,0 +1,117 @@
+/* 首页样式 */
+.sweep-con{
+    width:2.67rem;
+    height:2.67rem;
+    border:1px solid #ddd;
+    margin:0.8rem auto 0.4rem;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+    color:#888;
+}
+.sweep-con img{
+    width:0.96rem;
+    height: 0.67rem;
+    margin:0.67rem auto 0.27rem;
+}
+.order{
+    padding:0 0.27rem;
+}
+.order>h3{
+    font-weight: normal;
+    padding:0.13rem 0;
+    text-indent: 0.13rem;
+}
+.order p.order-time{
+    padding:0.13rem 0 0.4rem 0;
+    text-indent: 0.13rem;
+}
+.order-part{
+    width:100%;
+    min-height:2.67rem;
+    margin:0 auto 0.4rem;
+    background: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.order-address{
+    width:100%;
+    background:#ff5a01;
+    color:#fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    padding:0.13rem 0;
+}
+.order-address .address-start{
+    float:left;
+}
+.order-address .address-end{
+    float:right;
+}
+.address-start>span,.address-end>span{
+    display: block;
+}
+.address-start,.address-end{
+    width:32%;
+}
+.address-start .city,.address-end .city{
+    font-size:0.48rem;
+    text-align: center;
+    padding:0.16rem 0 0.11rem 0;
+}
+.address-start .country,.address-end .country{
+    text-align: center;
+    padding:0.11rem 0 0.16rem 0;
+}
+.order-address>.icon{
+    position: absolute;
+    top:0.53rem;
+    left:50%;
+    margin-left:-1.4rem;
+    width:2.8rem;
+    border-top:1px solid #fff;
+}
+.order-address>.icon:before,.order-address>.icon:after{
+    content: '';
+    width:0.05rem;
+    height: 0.05rem;
+    border-radius: 50%;
+    border:1px solid #fff;
+    position: absolute;
+    top:-0.04rem;
+    left:-0.08rem;
+}
+.order-address>.icon:after{
+    left:auto;
+    right:-0.08rem;
+}
+.order-address>.icon>i{
+    width:0.8rem;
+    height:0.4rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:-0.2rem;
+    margin-left:-0.4rem;
+    background:#ff5a01 url(../img/truck5.png) no-repeat center;
+    background-size: 0.63rem 0.37rem;   
+}
+.order-custom{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.order-custom .list{
+    padding:0.2rem 0;
+}
+.order-custom .list>span,.order-custom .list>p{
+    float:left;
+}
+.order-custom .list>span{
+    color:#5d5d75;
+    width:2.67rem;
+    text-indent:0.53rem;
+}
+.order-custom .list>p{
+    color:#333;
+}

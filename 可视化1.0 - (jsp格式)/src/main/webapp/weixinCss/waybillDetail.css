@@ -1,0 +1,110 @@
+/*公共部分*/
+.yb_detail_con{padding-top:15px;padding-bottom: 84px;}
+.part_left{color:#636363;}
+.part_right{padding-left:4px;padding-right:20px;}
+.dl_part_show{position: relative;}
+.dl_part_hide{margin-top:10px;}
+.yb_detail_list{padding:15px 15px 20px;background:#fff;}
+.text_center{text-align: right;padding-right:10px;}
+.color_red{color:#fa3030;}
+.color_green{color:#7dc63d;}
+
+/*地图部分*/
+.yb_detail_map{background:#fff;}
+.yb_detail_map .detail_map{width:100%;height:390px;background:#F7F7F7;}
+.yb_detail_map .a_link{padding:20px 15px 15px;}
+.yb_detail_map .a_link .weui-flex{
+	-webkit-align-items: center;
+	align-items: center;
+}
+.yb_detail_map .a_link .fl,.yb_detail_map .a_link .fr{width:50%;}
+.yb_detail_map .a_link img{width:44px;}
+.yb_detail_map .a_link a{display: block;}
+
+/*上传部分*/
+.a_link input.weui-flex__item{
+	width:100%;
+	padding:10px 0;
+	border:none;
+	background-color: transparent;
+	font-size:16px;
+	outline:none;
+}
+.a_link .fl input.weui-flex__item{
+	color:#fa3030;
+}
+.a_link .fr input.weui-flex__item{
+	color:#7dc63d;
+}
+/*任务单详情部分*/
+.detail_list_title{padding:20px 0;}
+.detail_list_title h4{
+	width:72%;
+	margin:0 auto;
+	border-top:1px solid #e6e6e6;
+	font-weight: 400;
+	position: relative;
+}
+.detail_list_title h4>span{
+	font-size:16px;
+	background:#fff;
+	color:#31acfa;
+	padding:0 15px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.detail_list_title h4>span.red_color{
+	color:#fa3030;
+}
+.dl_part_show .listpart_updown{
+	position: absolute;
+	top:46px;
+	right:0px;
+	width:20px;
+	height:20px;
+	background:url(../images/up.png) no-repeat center;		
+}
+/*异常情况*/
+.dl_part_hide{
+	display: none;
+	font-size: 15px;
+}
+.js_show .dl_part_show .listpart_updown{
+	background:url(../images/down.png) no-repeat center;
+}
+.js_show .dl_part_hide{
+	display: block;
+}
+.dl_part_show .listpart_updown.special{
+	top:12px;
+}
+.dl_part_hide ul,.dl_part_hide li{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+.dl_part_hide li{
+	float:left;
+	width:20%;
+	box-sizing: border-box;
+	padding:5px;
+}
+.dl_part_hide li>img{
+	width:100%;
+}
+/*底部按钮*/
+.yb_footer{bottom:0;background:#31acfa;padding:8px 15px;color:#fff;}
+/*.yb_footer .fl,.yb_footer .fr{width:50%;}*/
+.yb_footer .fl{padding-left:30px;}
+.yb_footer .fr{padding-right:30px;}
+.yb_footer .weui-flex{
+	-webkit-align-items: center;
+	align-items: center;
+}
+.yb_footer .weui-flex img{width:28px;margin-top:7px;}
+/*	.yb_footer .weui-flex .weui-flex__item{
+		align-self:center;
+	}*/

@@ -1,0 +1,110 @@
+/*通用*/
+.padding{
+	padding:12px;
+}
+/*banner图片*/
+.banner>img{
+	width:100%;
+}
+.banner{
+	margin-bottom: 10px;
+}
+/*图片导航*/
+.weui-grids{
+	background:#fff;
+}
+.weui-grid__icon{
+	width:30px;
+	height: 30px;
+}
+.weui-grid__icon + .weui-grid__label{
+	margin-top:8px;
+}
+.weui-grid__label{
+	color:#333;
+}
+.weui-grids:before{
+	border-top:none;
+}
+.weui-grid:before{
+	border-right:none;
+}
+.weui-grid:after{
+	border-bottom: none;
+}
+/*我的任务*/
+.my-task{
+	margin-top:10px;
+	background:#fff;
+}
+.my-task .task-left{
+	padding-right:6px;
+}
+.my-task .task-left>img{
+	width:27px;
+}
+.my-task .task-right{
+	color:#636363;
+}
+.my-task .task-right h4{
+	font-weight: 400;
+	font-size: 14px;
+}
+.my-task .task-right span{
+	font-size:12px;
+	display: block;
+	margin-top:-2px;
+}
+.my-task .task-right p{
+	font-size: 13px;
+	color:#8f8f8f;
+}
+.my-task .task-right p.task-bind{
+	margin:15px 0 2px 0;
+	font-size:15px;
+	color:#333;
+}
+/*底部导航*/
+.weui-footer{
+	background:#fff;
+	padding:5px 0 2px 0;
+	border-top:1px solid #e6e6e6;
+}
+.weui-footer_fixed-bottom{
+	bottom:0;
+}
+.weui-footer .footer-item{
+	width:22px;
+	height:22px;
+	margin:0 auto;
+}
+.weui-footer .footer-item>img{
+	display: block;
+    width: 100%;
+    height: 100%;
+}
+.footer-item-text{
+	margin-top:3px;
+	display: block;
+    text-align: center;
+    color: #636363;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.footer-swap{
+	position: relative;
+}
+.footer-swap-circle{
+	position: absolute;
+	left:50%;
+	margin-left:-40px;
+	bottom:8px;
+	width:80px;
+	height:80px;
+	background:#31acfa url(../images/footer-swap.png) no-repeat center center;
+	background-size: 50%;
+	border-radius: 50%;
+	
+}

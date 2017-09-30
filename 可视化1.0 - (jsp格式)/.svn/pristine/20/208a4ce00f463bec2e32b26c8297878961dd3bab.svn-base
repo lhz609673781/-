@@ -1,0 +1,32 @@
+.margin-top{margin-top:0;}
+#form .weui-cell{background-color:#fff;}
+.weui-select{height: 1.41176471em;line-height: 1.41176471;}
+.apply_status{color:#F43530;font-size:15px;margin-top:0;padding:10px 0;}
+.apply_status.weui-cells:before{border-top:none;}
+.weui-cells_form .weui-label>span{display: inline-block;width:12px;color:#999;}
+.p_tips{padding:6px 18px;font-size:14px;color:#999;}
+
+/*要求到货时间*/
+.project-label-w .weui-label{
+	width:130px;
+}
+.project-bd{
+	font-size:15px;
+	padding-top:3px;
+}
+.project-bd select{
+	font-size: 14px;
+	color:#666;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    margin-left: 8px;
+}
+.project-bd .project-select{
+	margin-left:0;
+	margin-right:8px;
+}
+.project-bd.weui-cell:before{
+	border-top:none;
+}

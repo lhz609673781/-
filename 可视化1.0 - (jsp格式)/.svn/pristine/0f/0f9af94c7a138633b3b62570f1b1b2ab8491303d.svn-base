@@ -1,0 +1,160 @@
+body{padding:0 20px;}
+/*===运输单管理===*/
+.col-min{width:30%;}
+.content-search{
+	position:relative;
+	padding:16px 0 20px;
+}
+.content-search .content-search-btn{
+	padding:5px 20px;
+	color:#fff;
+	border-radius: 3px;
+	background:#31acfa;
+	position:absolute;
+	top:121px;
+	right:5%;
+	font-size:14px;
+}
+.content-search .clearfix+.clearfix{margin-top:20px;}
+.content-search .clearfix .fl{position:relative;}
+.content-search .labe_l{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	width:68px; 
+	height:26px;
+	line-height:26px;
+	font-weight:400;
+}
+.content-search .tex_t{
+	position:absolute;
+	font-size:14px;
+	top:0;
+	left:68px;
+	width:140px;
+	height:26px;
+	border:1px solid #dedede;
+	text-indent:4px;
+	border-radius:4px;
+}
+.content-search .tex_t:focus{
+	border-color:#6ec5fb;
+}
+.content-search .tex_t.selec_t{font-size:14px;}
+.content-search .fl+.fl{margin-left:5%;}
+.content_btn{padding-top:20px;}
+.content_btn .sendMsg{
+	padding:5px 20px;
+	color:#fff;
+	border-radius: 3px;
+	background:#31acfa;
+	display: inline-block;
+	font-size:14px;
+}
+.content_btn .dowloadImage{
+	padding:5px 20px;
+	color:#fff;
+	border-radius: 3px;
+	background:#31acfa;
+	display: inline-block;
+	font-size:14px;
+}
+/*日历插件样式*/
+.input-append{font-size:14px;}
+.input-append .add-on{
+	position: absolute;
+    top: 0;
+    right: 8px;
+    line-height: 26px;
+    font-size:18px;
+} 
+.input-append .icon-th:before{color:#31acfa;}
+
+/*表格样式*/
+a:focus,a:hover{text-decoration:none;}
+.table-style table td a{color:#333;}
+.table-style table td a:focus, .table-style table td a:hover{
+	color:#597ecf;
+	text-decoration:underline;
+}
+.table-style table td a:focus{text-decoration:none;}
+.table-style table td a.a_link{color:#358ff0;}
+.table-style table th .all_check{margin:0 2px 0 0;vertical-align:middle;}
+
+/*收货客户弹出框样式*/
+/* #myModal .mbody-content .col-middle{width:40%;}
+#myModal .mbody-content .col-max{width:55%;} */
+#myModal .mbody-content .fl{position:relative;}
+#myModal .mbody-content .labe_l{font-weight:400;font-size:14px;width:68px;}
+#myModal .mbody-content .tex_t{border:1px solid #eee;height:24px;border-radius:4px;text-indent:4px;font-size:12px;position:absolute;top:0;left:68px;}
+#myModal .mbody-content .col_max .tex_t{width:244px;}
+#myModal .mbody-content .col_middle .tex_t{width:160px;}
+#myModal .mbody-content .fl+.fl{margin-left:270px;}
+#myModal .mbody-content .clearfix+.clearfix{margin-top:12px;}
+#myModal .mbody-content .btn,#myModal .modal-footer .btn-contain .btn{padding:3px 0;width:82px;}
+#myModal .mbody-content .text_center{text-align:center;}
+#myModal .mbody-content .text_center .btn+.btn{margin-left:20px;}
+#myModal .mbody-content .btn-primary,#myModal .modal-footer .btn-contain .btn-primary{background:#31acfa;border:1px solid #269eea;}
+#myModal .mbody-content .btn-primary:active{outline:none;}
+#myModal .modal-footer.table-style>table{margin-top:0;margin-bottom:20px;}
+#myModal .modal-footer .btn-contain{text-align:center;}
+
+/* 编辑弹出框 */
+@media (min-width: 768px){
+   #modalEdit .modal-dialog{
+        width:500px;
+    }
+}
+#modalEdit label{
+    font-weight: 400;
+}
+#modalEdit .modal-body label{
+    width:94px;
+    font-size:14px;
+}
+#modalEdit .modal-body input,
+#modalEdit .modal-body textarea
+{
+    border:1px solid #eee;
+    width:360px;
+    border-radius: 4px;
+    text-indent: 6px;
+    padding:1px 0;
+    font-size:14px;
+}
+#modalEdit .modal-body .body_group{
+    margin-bottom: 15px;
+}
+#modalEdit .modal-body .t_area{
+    padding-top:4px;
+    resize: none;
+}
+#modalEdit .body_group .input-append{
+    position: relative;
+}
+#modalEdit .body_group .input-append .add-on{
+    position: absolute;
+}
+#modalEdit .body_group .input-append .icon-th{
+    font-size:20px;
+}
+#modalEdit .modal-footer{
+    text-align: center;
+}
+#modalEdit .btn{
+    padding:3px 26px;
+}
+#modalEdit .btn-default{
+    border-color:#31acfa;
+    color:#31acfa;
+}
+#modalEdit .btn-primary{
+    background-color:#31acfa;
+    border-color:#209cea;
+}
+#modalEdit .btn-default:hover{
+    background-color:#fafafa;
+}
+#modalEdit .btn-primary:hover{
+    background-color:#25a4f5;
+}

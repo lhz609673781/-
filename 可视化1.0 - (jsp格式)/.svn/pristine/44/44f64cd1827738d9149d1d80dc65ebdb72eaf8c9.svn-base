@@ -1,0 +1,115 @@
+/*首页部分*/
+#tab1 .click-scan{
+	/*margin:auto;*/
+	padding:20px 0;
+	text-align: center;
+	background:#30aafa;
+	
+}
+#tab1 .click-scan-con,.mine-part-photo{
+	width:90px;
+	height:90px;
+	margin:0 auto 10px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+#tab1 .click-scan-con>img,.mine-part-photo>img{
+	margin:auto;
+	width:70%;
+	
+}
+#tab1 .click-scan>p{
+	font-size: 18px;
+	text-align: center;
+	color:#fff;
+	
+}
+
+/*公共部分*/
+.text_center{text-align: center;}
+.barCode-title{
+	padding:20px 15px;
+	color:#636363;
+}
+.barCode-title .weui-flex__item{margin-left:10px;}
+.barCode-title .weui-flex__item .c_orange{color:#ff7f00;margin-left:4px;}
+.barCode-title .s_more{letter-spacing: -2px;}
+.barCode-list{padding:0 15px 10px;}
+.barCode-list{margin-bottom: 60px;}
+.barCode-list-part{
+	padding:12px 10px;
+	border-radius: 8px;
+	background:#fff;
+	margin-bottom: 10px;
+	border:1px solid #dedede;
+	position:relative;
+}
+.barCode-list-part:active{
+	background: #ececec;
+}
+.barCode-list-part .part_top{margin-bottom: 4px;}
+.barCode-list-part .part_bottom{color:#636363;font-size:15px;}
+.barCode-list-part .weui-flex__item {padding-left:4px;padding-right:46px;/* background:red; */}
+.barCode-list-part .listpart_share{
+	position:absolute;
+	top:30px;
+	right:0px;
+	width:56px;
+	height:44px;
+}
+.barCode-list-part .listpart_share:before{
+	content:'';
+	display: block;
+	width:24px;
+	height:24px;
+	background:url(../images/share.png) no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top:12px;
+	right:16px;
+}
+/* 状态提示 */
+.barCode-list-part .btn_mark{
+	position:absolute;
+	top:10px;
+	right:5px;
+	font-size:14px;
+	letter-spacing:1px;
+}
+.barCode-list-part .btn_mark.btn_green{
+	color:#159fe5;
+}
+.barCode-list-part .btn_mark.btn_blue{
+	color:#00c3d9;
+}
+.barCode-list-part .btn_mark.btn_yellow{
+	color:#f57c02;
+}
+/*导航定位*/
+.weui-footer_fixed-bottom{bottom:0;}
+.weui-tabbar__icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+}
+.weui-tabbar__icon.a_tab1{
+	background-image: url(../images/icon_nav1.png);	
+}
+.weui-tabbar__icon.a_tab2{
+	background-image: url(../images/icon_nav2.png);
+}
+.weui-tabbar__icon.a_tab3{
+	background-image: url(../images/icon_nav3.png);
+}
+.weui-tabbar__icon{
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size:100% auto;
+}
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__icon{
+	background-position: left top;
+}
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label{
+	color:#31acfa;
+}

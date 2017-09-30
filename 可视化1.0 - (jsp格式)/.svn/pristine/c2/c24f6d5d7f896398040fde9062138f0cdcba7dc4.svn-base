@@ -1,0 +1,119 @@
+#For Web
+#userLoginURL = http://172.16.34.89:21888/user/login
+wayBillEditURL = http://172.16.34.89:21888/WayBill/editWaybill
+wayBillPageListURL = http://172.16.34.89:21888/WayBill/querypage
+wayBillByIdURL = http://172.16.34.89:21888/WayBill/queryById
+wayBillConfirmURL = http://172.16.34.89:21888/WayBill/endWaybill
+wayBillBindCustomerURL =  http://172.16.34.89:21888/WayBill/update
+waybill_search_list_url= http://172.16.34.89:21888/WayBill/search
+queryCustomerListURL = http://172.16.34.89:21888/Customer/querylist
+wayBillDetailShareURL= http://172.16.34.89:21888/shares/save
+wayBillDetailShareQueryURL= http://172.16.34.89:21888/shares/query
+waybill_query_groupId_url = http://172.16.34.89:21888/WayBill/queryGroupIdByWayBillId
+
+customerPageListURL = http\://172.16.34.89\:21888/Customer/querypage
+customerListByGroupURL = http\://172.16.34.89\:21888/Customer/querylistByGroup
+customerGroupByIdURL = http\://172.16.34.89\:21888/Customer/queryById
+customerByIdURL = http\://172.16.34.89\:21888/Customer/queryCustomerById
+addCustomerURL = http\://172.16.34.89\:21888/Customer/save
+updateCustomerURL = http\://172.16.34.89\:21888/Customer/update
+
+home_url=http://172.16.34.89:21888/DriverWayBillService/query
+location_url = http://172.16.34.89:21888/DriverWayBillService/queryhistory
+unload_url = http://172.16.34.89:21888/DriverWayBillService/end
+driver_waybill_statue_url=http://172.16.34.89:21888/DriverWayBillService/queryById
+#zk address
+dubbo.registry.address=172.16.34.87:2181
+#dubbo.registry.address=10.2.5.3:2181
+userLoginURL = http://172.16.34.89:21888/user/login
+#注册
+userRegisterURL = http://172.16.34.89:21888/user/doregister
+userQueryURL = http://172.16.34.89:21888/user/querybyId
+userAllRoleURL = http://172.16.34.89:21888/userRole/getUserAllRoles
+userAddRoleURL = http://172.16.34.89:21888/userRole/addUserRole
+#绑定手机号
+bindPhoneURL = http://172.16.34.89:21888/user/register
+#检查条码是否可用
+checkBarcodeURL = http://172.16.34.89:21888/Barcode/query
+#已绑定条码列表
+bindBarCodeURL = http://172.16.34.89:21888/WayBill/querylist
+#扫描定位
+scanLocationURL = http://172.16.34.89:21888/track/save
+#批量上报位置
+batchLocationURL = http://172.16.34.89:21888/track/savelist
+
+domian_url=http://ksh.ycgwl.com
+#domian_url=http://172.16.50.53/trackManage
+get_access_token_url=https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential
+get_weixin_userInfo_url=https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential
+get_ticket_url=https://api.weixin.qq.com/cgi-bin/qrcode/create
+
+
+#xie huo(xie huo)
+#UnloaddingURL=http://172.16.34.89:21888/DriverWayBillService/end
+
+#ExceptionUp(yi chang shang bao)
+ExceptionUploaddingURL=http://172.16.34.89:21888/exceptionReport/save
+
+#ReceiptUp(yun shu dan shang bao)
+ReceiptUploaddingURL=http://172.16.34.89:21888/ReceiptService/save
+
+
+#TwoDimensionalCodeBinding(sao ma bang ding)
+TwoDimensionalCodeBindingURL=http://172.16.34.89:21888/Barcode/bind
+
+user_update_url = http://172.16.34.89:21888/user/update
+
+resourceGroup_list_url = http://172.16.34.89:21888/GroupService/querylist
+resourceGroup_add_url = http://172.16.34.89:21888/GroupService/save
+resourceGroup_edit_url = http://172.16.34.89:21888/GroupService/update
+resourceGroup_detail_url = http://172.16.34.89:21888/GroupService/querybyId
+resourceGroup_check_url = http://172.16.34.89:21888/GroupService/isGroupMermers
+resourceGroup_detail_by_barcode_url = http://172.16.34.89:21888/GroupService/querybyBarCode
+
+group_member_add_url = http://172.16.34.89:21888/GroupMember/save
+group_member_delete_url = http://172.16.34.89:21888/GroupMember/delete
+
+user_role_url = http://172.16.34.89:21888/userRole/queryUserRole
+add_user_role_url=http://172.16.34.89:21888/userRole/addUserRole
+role_all_list_url=http://172.16.34.89:21888/userRole/queryAllRole
+
+resource_app_url =http\://172.16.34.89\:21888/ResourceApp/save
+
+uploadImgURL = http://172.16.34.89:20880/user-management/image_upload
+# image path
+ImagePath =http://ksh.ycgwl.com:8081
+
+waybill_wx_url =http\://172.16.34.89\:21888/WayBill/myTask
+#任务单文件下载
+wayBillImgByidUrl = http://172.16.34.89:21888/WayBill/dowloadImage
+
+#送货单excel导入
+OutBillImpExcelURL = http://172.16.34.89:21888/OutBill/saveImpExcel
+
+#每日统计url
+dailyTotalUrl = http://172.16.34.89:21888/DailyTotalService/list
+#送货单列表
+outBillGetListByGroupId = http://172.16.34.89:21888/OutBill/getListByGroupId
+#送货修改
+outBillUpdate = http://172.16.34.89:21888/OutBill/updateById
+#对账单列表
+account_list_url  = http://172.16.34.89:21888/AccountBook/getAccountList
+#通过运单id获取单个对账单信息
+account_by_waybill_url = http://172.16.34.89:21888/AccountBook/getAccountByWayBillId
+#添加对账单信息
+add_account_url = http://172.16.34.89:21888/AccountBook/addAccountInfo
+#对账单下载
+wayBillAccountUrl=http://172.16.34.89:21888/AccountBook/dowloadAccount
+
+
+#选择任务
+searchBillURL=http\://172.16.34.89\:21888/DriverWayBillService/querySearchhistory
+#获取单据idgetWayBillId
+getWaybillURL=http://172.16.34.89:21888/WayBill/getWayBillId
+#通过barcode获取wayBill
+getWaybillIdURL=http://172.16.34.89:21888/WayBill/getWayBillCode
+#项目组任务列表
+group_waybill_url=http\://172.16.34.89\:21888/WayBill/queryWayBillView
+#获取查询个人资源组列表
+queryGroupURL=http\://172.16.34.89\:21888/GroupMember/queryGroupList

@@ -1,0 +1,144 @@
+/*公共部分*/
+.text_center{text-align: center;}
+.text_right{text-align: right;}
+.pad_left{padding-left:4px;}
+
+/*列表内容*/
+.barCode-title{
+	padding:20px 15px;
+	color:#636363;
+}
+.barCode-list-part .weui-flex.big_size{font-size:17px;color:#000;}
+.barCode-list-part .weui-flex{
+	font-size: 15px;
+	color:#636363;
+	padding:2px 0;
+}
+.barCode-list-part .pl_out,.barCode-list-part .pl_outed{
+	position:absolute;
+	top:10px;
+	right:5px;
+	padding:4px 15px;
+	color:#fff;
+	background:#f49d00;
+	border-radius: 6px;
+	font-size: 16px;	
+}
+.barCode-list-part .pl_out:active{
+	background:#db8d00;
+}
+.barCode-list-part .pl_outed{
+	background:transparent;
+	color:#636363;
+	padding:4px 0;
+}
+.barCode-list-part{
+	padding:12px 10px;
+	border-radius: 8px;
+	background:#fff;
+	margin-bottom: 10px;
+	border:1px solid #dedede;
+	position:relative;
+}
+/*tab2选项卡地址*/
+#positionList .itemTab{text-align: center;padding-bottom: 15px;margin-bottom: 10px;}
+#positionList .itemTab{padding:10px 0;border-bottom: 2px solid transparent;color:#fff;}
+#positionList .itemTab.current{border-bottom: 2px solid #ffff00;}
+
+#positionList .tabBtn{background:#30aafa;margin-bottom: 10px;}
+#positionList .tabBtn .tab_ul{padding:0 15px;}
+#positionList .barCode-title{padding:3px 10px;}
+#positionList .barCode-list{margin-bottom: 0;padding:5px 15px 0;}
+#positionList .tabCon{padding-bottom:30px;}
+
+/*日期+搜索*/
+.weui-search-bar{
+	border:1px solid #9bdbfd;
+	border-right:none;
+	border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+	background:#61c8fc;
+	padding:0 10px;	
+}
+.f_search{
+	background:#30aafa;
+	padding:20px 0;
+}
+#positionList .weui-flex{
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+#positionList .t_date{
+	padding: 5px 0 5px 10px;
+	position:relative;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+#positionList .t_date_hd .weui-label{
+	width:42px;
+	color:#fff;
+}
+#positionList .t_date_show{
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+.t_date_bd{
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.t_date_bd .weui-input{color:#fff;}
+
+.t_date_ft.weui-icon-clear{
+    cursor: pointer;
+    font-size:16px;
+    color:#fff;
+    padding-right:10px;
+}
+.weui-search-bar__box .weui-search-bar__input{
+	padding:8px 0;
+	font-size: 16px;
+	text-indent: 4px;
+	height:auto;
+	line-height: normal;
+	color:#fff;
+}
+.weui-search-bar__label,.weui-search-bar__box{
+	background:#61c8fc;
+}
+.weui-icon-search{
+	color: #fff;
+	font-size: 20px;
+	line-height: 34px;
+	padding: 0 4px;
+	margin-left:-8px;
+}
+.weui-search-bar__box{
+	padding-left:0;
+}
+.weui-search-bar__cancel-btn,.weui-search-bar__box .weui-icon-clear{
+	line-height:34px;
+	color:#fff;
+}
+.weui-search-bar__box .weui-icon-clear{
+	font-size:16px;
+	padding:0;
+}
+.weui-search-bar:before{
+	border-top:none;
+}
+.weui-search-bar:after{
+	border-bottom: none;
+}
+.weui-search-bar__form:after{
+	height:0;
+	width:0;
+}
+input::-webkit-input-placeholder {color:#fff;}
+input:-ms-input-placeholder {color:#fff;}

@@ -1,0 +1,255 @@
+#header{
+	width:100%;
+	height:80px;
+	background:#31acfa;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 9;
+
+}
+#navigation{
+	width:240px;
+	background: #ebf7ff;
+	position: fixed;
+	top:80px;
+	left:0;	
+	height:100%;
+	z-index: 8;
+}
+#content{
+	position: fixed;
+	width:100%;  /*值不能是auto,auto的话,width不能100%填充页面*/
+	margin:80px 0 0 240px;
+	box-sizing: border-box;
+}
+
+/*===头部===*/
+#header h1 {
+    text-indent: 74px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 0;
+    line-height: 80px;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'Microsoft Yahei';
+    background:url(../images/newlogo.png) no-repeat 0 center;
+    background-size:61px 48px;
+}
+#header .admin{
+	float:right;
+	font-size:14px;
+	color:#fff;
+	height:80px;
+	margin-right: 50px;
+}
+#header .admin .welcome,#header .admin .exit{
+	float:left;
+	margin-top:30px;
+}
+#header .admin .welcome{
+	margin-right:35px;
+}
+#header .admin .welcome i{
+	display: inline-block;
+	padding-left:30px;
+	height: 28px;
+	line-height:28px;
+	background: url(../images/admin.png) no-repeat left center;
+	margin-right:2px;
+}
+#header .admin .exit{
+	cursor: pointer;
+	height:28px;
+	line-height: 28px;
+}
+
+/*===左侧列表===*/
+
+#navigation .submenu{
+	position: relative;
+}
+
+#navigation .submenu a{
+	display: block;
+	padding:15px 0 15px 66px;
+	color:#303233;
+	font-size:16px;
+}
+#navigation .submenu.active>a{
+	background:#fff;
+	color:#31acfa;
+}
+#navigation .submenu>a:hover{
+	background:#daeffd;
+	text-decoration:none;
+}
+#navigation .submenu>a:focus{
+	text-decoration:none;
+}
+#navigation .submenu .i-icon{
+	width:20px;
+	height:22px;
+	background:url(../images/lefticon.png) no-repeat;
+	background-size:16px;
+	position: absolute;
+	top:18px;
+	left:40px;
+}
+#navigation .submenu.active .i-icon{
+	background:url(../images/lefticon_h.png) no-repeat;
+	background-size:16px;
+}
+
+/*===表格样式===*/
+.table-style table{
+	border-collapse: collapse;
+	width:100%;
+	margin-top:20px;
+	text-align: center;
+	table-layout: fixed;
+}
+.table-style table td,.table-style table th{
+	font-size: 12px;
+	border:1px solid #e1e5ed;
+	padding:10px 0;
+	word-break:break-all;
+}
+.table-style table th{
+	font-size: 14px;
+	padding:10px 0;
+	color:#333;
+	border-bottom: none;
+	background:#f5f5f5;
+	font-weight: normal;
+	text-align:center;
+}
+.table-style table tbody tr:nth-of-type(2n+1){
+	background:#fff;
+}
+.table-style table tbody tr:nth-of-type(2n){
+	background:#f3fafe;
+}
+.table-style table tbody tr:hover{
+	background:#dff3ff;
+}
+.table-style table td .add-info{
+	padding:6px 10px;
+	color:#fff;
+	border-radius: 3px;
+	background:#597ecf;
+}
+/* .table-style table td{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+} */
+
+
+/*===模态框样式布局===*/
+.model{
+	position: fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index: 10;
+	background: rgba(0,0,0,.4);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: content-box;
+	box-sizing: border-box;
+	display: none;
+}
+.model .model-box{
+	background:#fff;
+	width:500px;
+	position:absolute;
+	top:5%;
+	left:50%;
+	margin-left:-250px;
+	padding:30px 0 20px 0;
+	border-radius: 4px;
+}
+.model .model-box .close{
+	font-size: 20px;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    color: #ccc;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+.model .model-box .model-head{
+	font-weight: bold;
+	text-indent: 25px;
+	font-size: 16px;
+	padding-bottom: 10px;
+	font-family: "微软雅黑";
+}
+.model .model-box .model-head h4{
+	font-weight: normal;
+	text-indent: 25px;
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+.model .model-box .model-body{
+	padding:15px 25px;
+	min-height: 100px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: content-box;
+	box-sizing: border-box;
+}
+.model .model-box .model-foot{
+	text-align: center;
+	padding:20px 0 10px 0;
+}
+.model .model-box .model-foot a{
+	display: inline-block;
+	padding:6px 20px;
+	color:#fff;
+	background:#31acfa;
+	border-radius: 3px;
+}
+
+/*===跟踪管理模态狂样式内容===*/
+.model .model-box .model-body>textarea{
+	width:100%;
+	height:150px;
+	border-radius: 4px;
+	padding:6px;
+	text-indent: 4px;
+	border:1px solid #ccc;
+	resize: none;
+}
+
+/*===客户信息页面模态狂样式内容===*/
+.model .model-box .model-form{
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.model .model-box .model-form>label{
+	display: inline-block;
+	width:80px;
+	text-align: right;
+	margin-right: 6px;
+}
+.model .model-box .model-form>input,
+.model .model-box .model-form>select
+{
+	width:200px;
+	border:1px solid #ddd;
+	border-radius: 3px;
+	height:28px;
+	text-indent:6px;
+}
+.model .model-box .model-form.special>input{
+	width:340px;
+}
+
+/*===搜索框样式内容===*/

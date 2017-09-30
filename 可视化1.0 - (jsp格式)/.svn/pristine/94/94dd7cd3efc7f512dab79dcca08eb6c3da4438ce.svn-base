@@ -1,0 +1,19 @@
+.err_con{
+	text-align: center;
+}
+.err_con img{
+	width:40%;
+	margin-top:50px;
+}
+.err_con p{
+	margin-top:50px;
+	color:#808080;
+	font-size: 15px;
+}
+.err_con .swap{
+	display: inline-block;
+	margin-top:20px;
+	padding:8px 25px;
+	border:1px solid #31acfa;
+	color:#31acfa;
+}
