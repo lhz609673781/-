@@ -1,0 +1,38 @@
+<style>
+    .layui-tab{
+        overflow: visible;
+    }
+    .layui-form{
+
+    }
+    .layui-form-label{
+        width: 70px;
+    }
+    .layui-input-block{
+        margin-left: 100px;
+    }
+</style>
+<div class="container-fluid" ng-controller="baseLimitSetController">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">基础权限设置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-form">
+                    <div class="layui-form-item" ng-repeat="limit in limits">
+                        <label class="layui-form-label">{{limit.comment}}</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" ng-repeat="level in limit.levels" title="{{level.comment}}" id="{{level.id}}" ng-checked="limit.levelLimits.indexOf(level.id) != -1" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" ng-click="save()">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

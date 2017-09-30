@@ -1,0 +1,110 @@
+<style>
+    .custom-table td{
+        padding: 0;
+        position: relative;
+    }
+
+    .custom-table td input,
+    .custom-table td select{
+        display: block;
+        width: 100%;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        border: none;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title center">常用收货信息录入</h3>
+</div>
+<div class="modal-body">
+    <div class="table-title col-md-12 clearAfter fn">
+        <p class="col-md-4">客户名称：{{clientele.clienteleName}}</p>
+        <p class="col-md-4">客户编号：{{clientele.clienteleNo}}</p>
+        <p class="col-md-4">运营分公司：{{clientele.operationSonCompanyComment}}</p>
+    </div>
+    <ng-form name="receiptMsgValid">
+        <table class="layui-table custom-table">
+            <colgroup>
+                <col width="100">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+                <col width="400">
+                <col width="200">
+                <col width="100">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>收货人名称</th>
+                    <th>手机号码</th>
+                    <th>电话</th>
+                    <th>收货省</th>
+                    <th>收货市</th>
+                    <th>详细地址</th>
+                    <th>返单天数</th>
+                    <th><span class="custom-circle-edit" ng-click="addList()" style="width: 25px;height: 25px;line-height: 21px;font-size: 24px;">+</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="receiptMsg in receiptMsgs">
+                    <td>{{$index + 1}}</td>
+                    <td>
+                        <ng-form name="receiverNameValid">
+                            <input type="text" name="receiverName" ng-model="receiptMsg.receiverName" required />
+                            <i class="fa fa-warning errorIcon" ng-if="receiverNameValid.receiverName.$invalid && receiverNameValid.receiverName.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="receiverPhoneValid">
+                            <input type="text" name="receiverPhone" ng-model="receiptMsg.receiverPhone" ng-pattern="/^1[345678]\d{9}$/" required />
+                            <i class="fa fa-warning errorIcon" ng-if="receiverPhoneValid.receiverPhone.$invalid && receiverPhoneValid.receiverPhone.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="receiverTelephoneValid">
+                            <input type="text" name="receiverTelephone" ng-model="receiptMsg.receiverTelephone" required />
+                            <i class="fa fa-warning errorIcon" ng-if="receiverTelephoneValid.receiverTelephone.$invalid && receiverTelephoneValid.receiverTelephone.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="addressProvinceValid">
+                            <select name="addressProvince" ng-model="receiptMsg.addressProvinceId" ng-change="initAddressCity(receiptMsg.addressProvinceId,receiptMsg.index)" ng-options="addressProvince.id as addressProvince.comment for addressProvince in addressProvinces" required>
+                                <option value="">请选择省市</option>
+                            </select>
+                            <i class="fa fa-warning errorIcon" ng-if="addressProvinceValid.addressProvince.$invalid && addressProvinceValid.addressProvince.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="addressCityValid">
+                            <select name="addressCity" ng-model="receiptMsg.addressCityId" ng-options="addressCity.id as addressCity.comment for addressCity in addressCitys['arr' + receiptMsg.index]" required>
+                                <option value="">请选择省市</option>
+                            </select>
+                            <i class="fa fa-warning errorIcon" ng-if="addressCityValid.addressCity.$invalid && addressCityValid.addressCity.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="addressDetailValid">
+                            <input type="text" name="addressDetail" ng-model="receiptMsg.addressDetail" required />
+                            <i class="fa fa-warning errorIcon" ng-if="addressDetailValid.addressDetail.$invalid && addressDetailValid.addressDetail.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td>
+                        <ng-form name="backListDayNumValid">
+                            <input type="text" name="backListDayNum" ng-model="receiptMsg.backListDayNum" required />
+                            <i class="fa fa-warning errorIcon" ng-if="backListDayNumValid.backListDayNum.$invalid && backListDayNumValid.backListDayNum.$touched"></i>
+                        </ng-form>
+                    </td>
+                    <td><span class="custom-circle-edit" ng-click="delList(receiptMsg.index)" style="width: 25px;height: 25px;line-height: 18px;position: relative;top: 2px;">-</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-form>
+</div>
+<div class="modal-footer">
+    <button class="layui-btn layui-btn-warm" ng-click="cancel()">取消</button>
+    <button class="layui-btn layui-btn-normal" ng-disabled="receiptMsgValid.$invalid" ng-click="save()">保存</button>
+</div>

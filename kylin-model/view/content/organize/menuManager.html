@@ -1,0 +1,99 @@
+<style>
+    .menu-bar{
+        width: 190px;
+        position: absolute;
+        left: 15px;
+        top: 72px;
+        bottom: 0;
+    }
+    .menu-search i{
+        display: block;
+        width: 30px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+        font-size: 20px;
+        color: #e6e6e6;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+    .menu-tree-wrap{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 55px;
+        bottom: 0;
+        border: 1px solid #e6e6e6;
+        overflow: auto;
+    }
+    .menu-content{
+        position: absolute;
+        left: 236px;
+        right: 0;
+        top: 72px;
+        bottom: 0;
+    }
+</style>
+<div class="custom-container-fluid">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">菜单管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="menu-bar">
+                    <form class="layui-form" ng-submit="search()">
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline menu-search" style="position: relative;">
+                                <input type="text" placeholder="请输入名称检索" class="layui-input" ng-model="searchName" style="padding-right: 30px;">
+                                <i class="fa fa-search" ng-click="search()"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="menu-tree-wrap">
+                        <ul id="menu-tree"></ul>
+                    </div>
+                </div>
+                <div class="menu-content">
+                    <form class="layui-form menu-control" style="margin-bottom: 17px;">
+                        <button class="layui-btn">新增</button>
+                        <button class="layui-btn">编辑</button>
+                        <button class="layui-btn">删除</button>
+                    </form>
+                    <div class="menu-description">
+                        <table class="layui-table" style="margin: 0;">
+                            <colgroup>
+                                <col width="100">
+                                <col width="200">
+                                <col width="100">
+                                <col width="200">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>功能名称</td>
+                                    <td>订单模块</td>
+                                    <td>功能类型</td>
+                                    <td>菜单</td>
+                                </tr>
+                                <tr>
+                                    <td>上级</td>
+                                    <td>麒麟系统</td>
+                                    <td>资源标识</td>
+                                    <td>base</td>
+                                </tr>
+                                <tr>
+                                    <td>排序</td>
+                                    <td>1</td>
+                                    <td>功能描述</td>
+                                    <td>录入订单信息</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

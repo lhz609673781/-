@@ -1,0 +1,9 @@
+<ul class="layui-nav layui-nav-tree layui-nav-side" id="navBar">
+    <li class="layui-nav-item">
+        <a href="javascript:void(0);"><i class="icon-file-alt custom-icon"></i>理赔报表</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:void(0);" ui-sref="main.clientSeacher"><i class="icon-github-alt custom-icon"></i>客户查询</a></dd>
+            <dd><a href="javascript:void(0);" ui-sref="main.companySeacher"><i class="icon-building custom-icon"></i>公司查询</a></dd>
+        </dl>
+    </li>
+</ul>

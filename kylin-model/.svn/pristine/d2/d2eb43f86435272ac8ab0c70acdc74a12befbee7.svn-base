@@ -1,0 +1,4 @@
+"use strict";
+angular.module("app").controller("receiptMsgController",function ($rootScope,$scope,$http,$uibModalInstance,config,base) {
+    $scope.test = "test";
+});

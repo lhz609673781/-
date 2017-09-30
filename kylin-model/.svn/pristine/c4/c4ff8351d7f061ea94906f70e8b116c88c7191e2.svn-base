@@ -1,0 +1,67 @@
+<style>
+    .custom-table td{
+        padding: 0;
+    }
+
+    .custom-table td input,
+    .custom-table td select{
+        display: block;
+        width: 100%;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        border: none;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title center">常用货品信息录入</h3>
+</div>
+<div class="modal-body">
+    <div class="table-title col-md-12 clearAfter fn">
+        <p class="col-md-4">客户名称：{{clientele.clienteleName}}</p>
+        <p class="col-md-4">客户编号：{{clientele.clienteleNo}}</p>
+        <p class="col-md-4">运营分公司：{{clientele.operationSonCompanyComment}}</p>
+    </div>
+    <table class="layui-table custom-table">
+        <colgroup>
+            <col width="100">
+            <col width="200">
+            <col width="400">
+            <col width="400">
+            <col width="200">
+            <col width="100">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>货物品类</th>
+                <th>货物名称</th>
+                <th>型号</th>
+                <th>单位</th>
+                <th><span class="custom-circle-edit" ng-click="addList()" style="width: 25px;height: 25px;line-height: 21px;font-size: 24px;">+</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="goodsMsg in goodsMsgs">
+                <td>{{$index + 1}}</td>
+                <td>
+                    <input type="text" ng-model="goodsMsg.goodsCategory" />
+                </td>
+                <td>
+                    <input type="text" ng-model="goodsMsg.goodsName" />
+                </td>
+                <td>
+                    <input type="text" ng-model="goodsMsg.goodsModel" />
+                </td>
+                <td>
+                    <input type="text" ng-model="goodsMsg.goodsUnit" />
+                </td>
+                <td><span class="custom-circle-edit" ng-click="delList(goodsMsg.index)" style="width: 25px;height: 25px;line-height: 18px;position: relative;top: 2px;">-</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="layui-btn layui-btn-warm" ng-click="cancel()">取消</button>
+    <button class="layui-btn layui-btn-normal" ng-click="ok()">保存</button>
+</div>

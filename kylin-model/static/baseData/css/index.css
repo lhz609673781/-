@@ -1,0 +1,180 @@
+*{
+	margin:0;
+	padding:0
+}
+html,body{
+	width:100%;
+	height:100%;
+	overflow-x: hidden;
+}
+
+.active{
+	background-color: #E0FFFF;
+}
+/*内容区  编辑展示*/
+.Right_seek{
+	margin: 15px;
+}
+.arborescence_table{
+	margin: 0 15px;
+}
+.tab_div{
+	width:100%;
+	height:40px;
+	margin-top:20px;
+	margin-left:40px;	
+}
+.tab_div span{
+	display: block;
+	float:left;
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	background: #344466;
+	font-size:16px;
+	color: #ffffff;
+}
+.genre{
+	width:30%;
+}
+.enCoding{
+	width:40%;
+}
+.operate{
+	width:30%;
+}
+.list{
+	width:100%;
+	height:auto;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	margin-left:40px;
+	
+}
+.list_li{
+	width:100%;
+	height:40px;
+	border-bottom:1px solid #ccc;
+}
+.list_li2{
+	width:100%;
+	height:40px;
+	border-bottom:1px solid #ccc;
+}
+.list_ul{
+	width:100%;
+	min-height:1000px;
+	
+	border:1px solid red;
+}
+.cargo,.encipher,.handle{
+	float:left;
+	line-height:40px;
+	border-right:1px solid #ccc;
+}    
+.cargo{
+	width:30%;
+	padding-left:3%;
+}
+.cargo div{
+	margin-left:30px;
+}
+.handle{
+	width:30%;
+	text-align: center;
+}
+.encipher{
+	width:40%;
+	text-align: center;
+}
+.list_ul1{
+	width:100%;
+	min-height:40px;
+	border:1px solid red;
+}
+
+.list_li3{
+	width:100%;
+	height:40px;
+	border-bottom:1px solid #ccc;
+}
+
+/*树表格*/
+body{
+	font-size:16px;
+}
+.TreeGrid{
+	border-collapse: collapse; 
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+}
+
+.TreeGrid .header{
+	background-color: #344466;
+	font-size: 16px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+
+.TreeGrid td{
+	border: 1px solid #E6E6FA;
+	padding: 8px 3px 8px 3px;
+   
+}
+
+.TreeGrid a{
+	text-decoration: underline;
+	color: black;
+}
+
+.TreeGrid a:hover{
+	color: blue;
+}
+
+.TreeGrid .image_hand{
+	border: 0;
+	cursor:hand;
+	align:absmiddle;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.TreeGrid .image_nohand{
+	border: 0;
+	align:absmiddle;
+	display: none;
+}
+
+.TreeGrid .row_hover{
+	background-color: #E6E6FA;
+}
+
+.TreeGrid .row_active{
+	background-color: #E0FFFF;
+}
+
+#addTplCodePrefix{
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	color: #999;
+	position: absolute;
+	left: 20px;
+	top: 0;
+}
+
+.modal-header{
+	padding: 0 15px;
+	height: 40px;
+	text-align: left;
+	line-height: 40px;
+	background: #eee;
+	font-weight: bold;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+.modal-header .close{
+	margin-top: 10px;
+}

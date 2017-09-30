@@ -1,0 +1,24 @@
+"use strict";
+angular.module("app").controller("navBarController",function ($rootScope,$scope,$http,config,base) {
+    /**
+     * 初始化组织架构
+     */
+    $scope.init = function () {
+        $http({
+            method : 'GET',
+            url : config.api_host + 'org/res/api/menu',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+
+            }else{
+                base.layer.msg(data.message);
+            }
+        });
+    };
+    $scope.init();
+});

@@ -1,0 +1,16 @@
+"use strict";
+angular.module("app").directive("repeatFinish",function () {
+    /**
+     * repeatFinish
+     * 监听repeat指令渲染完成
+     */
+    return {
+        link: function(scope,element,attr){
+            if(scope.$last){
+                setTimeout(function () { //指令渲染完成，延迟30ms等待数据渲染结束
+                    scope.$eval( attr.repeatFinish );
+                },30);
+            }
+        }
+    }
+});

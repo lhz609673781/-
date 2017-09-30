@@ -1,0 +1,107 @@
+<style>
+	.wrap {
+		width: 100%;
+		height: 100%;
+		background-color: #344566;
+		overflow: hidden;
+	}
+	.container {
+		width: 250px;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		margin-left: -125px;
+		margin-top: -170px;
+	}
+	.logo {
+		margin-bottom: 20px;
+	}
+	.logo .logo-item{
+
+	}
+	.logo .logo-item a{
+		display: block;
+		width: 192px;
+		height: 26px;
+		margin: 0 auto;
+	}
+	.logo .logo-item a img{
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.form{
+
+	}
+	.form .form-group{
+		display: table;
+		width: 100%;
+		border-radius:3px;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-o-border-radius:3px;
+		-ms-border-radius:3px;
+		overflow: hidden;
+		margin-bottom: 12px;
+	}
+	.form .form-group .form-label{
+		display: table-cell;
+		width: 42px;
+		height: 42px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 18px;
+		color: #344265;
+		background-color: #fff;
+	}
+	.form .form-group .form-label i{
+
+	}
+	.form .form-group .form-control{
+		display: table-cell;
+		width: 100%;
+		height: 42px;
+		text-indent: 10px;
+		line-height: 42px;
+		font-family: "微软雅黑";
+		font-size: 14px;
+		background-color: #fff;
+	}
+	.form .form-group .form-btn{
+		display: block;
+		width: 100%;
+		height: 42px;
+		text-align: center;
+		line-height: 42px;
+		font-size: 16px;
+		color: #fff;
+		background-color: #0088cc;
+	}
+	.error{
+		text-align: center;
+		color: #ccc;
+	}
+</style>
+<div class="wrap">
+	<div class="container animated flipInX">
+		<div class="logo">
+			<div class="logo-item">
+				<a href="#"><img src="images/logo.png" /></a>
+			</div>
+		</div>
+		<div class="form">
+			<div class="form-group">
+				<label for="userName" class="form-label"><i class="fa fa-user"></i></label>
+				<input type="text" placeholder="请输入用户名/手机" class="form-control" id="userName" ng-model="userName" />
+			</div>
+			<div class="form-group">
+				<label for="password" class="form-label"><i class="fa fa-lock"></i></label>
+				<input type="password" placeholder="请输入密码" class="form-control" id="password" ng-model="password" />
+			</div>
+			<div class="form-group">
+				<a href="#" class="form-btn" ng-click="login()">登 录</a>
+			</div>
+		</div>
+		<div class="error">{{error}}</div>
+	</div>
+</div>

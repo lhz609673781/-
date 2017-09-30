@@ -1,0 +1,49 @@
+"use strict";
+angular.module("app").controller("loginController",function ($rootScope,$scope,$http,config,cookie,base) {
+    //判断用户是否登陆
+    var userName = cookie.get_userName();
+    if (userName){
+        $rootScope.$state.go("main");
+    }
+    /**
+     * 登陆
+     */
+    $scope.login = function () {
+        if ($.trim($scope.userName).length < 2 || $.trim($scope.userName).length > 12) {
+            $scope.error = "用户名长度为2-12位字符";
+            return false;
+        } else if ($.trim($scope.password).length < 6 || $.trim($scope.password).length > 16) {
+            $scope.error = "密码长度为6-16位字符";
+            return false;
+        } else {
+            var para = {};
+            para.account = $scope.userName;
+            para.password = $scope.password;
+            $http({
+                method : 'POST',
+                url : config.api_host + 'api/login',
+                data : JSON.stringify(para),
+                headers : {
+                    'Content-Type': 'application/json'
+                }
+            }).success(function(data) {
+                if (data.success) {
+                    cookie.set_user(data.user);
+                    cookie.set_token(data.token);
+                    base.refresh();
+                }else{
+                    base.layer.msg(data.message);
+                }
+            });
+        }
+    };
+    /**
+     * 绑定回车事件
+     */
+    $(document).keydown(function (e) {
+        var e = e || window.event;
+        if (e.keyCode == 13) {
+            $scope.login();
+        }
+    });
+});

@@ -1,0 +1,23 @@
+"use strict";
+angular.module("app").service("base",function () {
+    var $this = this;
+    /**
+     * layui
+     */
+    this.layui = layui;
+    /**
+     * layui调用获取内部组件
+     */
+    layui.use(['layer','laydate'], function(){
+        /**
+         * layer
+         */
+        $this.layer = layui.layer;
+    });
+    /**
+     * 刷新页面
+     */
+    this.refresh = function () {
+        window.location.reload();
+    };
+});

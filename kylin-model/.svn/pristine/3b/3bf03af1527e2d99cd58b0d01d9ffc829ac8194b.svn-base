@@ -1,0 +1,21 @@
+"use strict";
+angular.module("app").service("base",function () {
+    var $this = this;
+    /**
+     * layui
+     */
+    layui.use(['layer','element','laydate'], function(){
+        var layer = layui.layer,
+            element = layui.element();
+        /**
+         * layer
+         */
+        $this.layer = layer;
+    });
+    /**
+     * 刷新页面
+     */
+    this.refresh = function () {
+        window.location.reload();
+    };
+});

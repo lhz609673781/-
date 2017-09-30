@@ -1,0 +1,480 @@
+"use strict";
+angular.module("app").controller("contractClienteleController",function ($rootScope,$scope,$http,config,base) {
+    $scope.pageSize = 10; //列表分页使用，定义每页显示的数量
+    $scope.tabArr = []; //选项卡数组
+    /**
+     * 客户级别渲染完成
+     * 客户类型渲染完成
+     */
+    $scope.formRenderFinish = function(){
+        $rootScope.form.render();
+    };
+    /**
+     * 选项卡渲染
+     */
+    $scope.tabRenderFinish = function () {
+        $rootScope.element.init();
+        $("#layui-tab-title li:last").click();
+    };
+    /**
+     * 初始化客户级别
+     */
+    $scope.initClienteleLevel = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteleLevels = data.clienteleLevels;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化客户类型
+     */
+    $scope.initClienteleType = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteleTypes = data.clienteleTypes;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化客户状态
+     */
+    $scope.initClienteleStatus = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteleStatuss = data.clienteleStatuss;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化行业类别
+     */
+    $scope.initBusinessType = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.businessTypes = data.businessTypes;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化结款方式
+     */
+    $scope.initSettlementMethod = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.settlementMethods = data.settlementMethods;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化支付方式
+     */
+    $scope.initPayMethod = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.payMethods = data.payMethods;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化合同客户列表
+     */
+    $scope.init = function (pageNum) {
+        var para = {};
+        para.data = {};
+        para.pageSize = $scope.pageSize;
+        para.pageNum = pageNum;
+        para.data.clienteleNameSearch = $scope.clienteleNameSearch;
+        para.data.groupNameSearch = $scope.groupNameSearch;
+        para.data.operationSonCompanySearch = $scope.operationSonCompanySearch;
+        para.data.clienteleLevelSearch = $("#clienteleLevelSearch").find(".layui-this").attr("lay-value");
+        para.data.clienteleNoSearch = $scope.clienteleNoSearch;
+        para.data.clienteleTypeSearch = $("#clienteleTypeSearch").find(".layui-this").attr("lay-value");
+        para.data.onCooperateSearch = $("#clienteleStatusSearch input:eq(0)").next().hasClass("layui-form-checked");
+        para.data.stopBusinessSearch = $("#clienteleStatusSearch input:eq(1)").next().hasClass("layui-form-checked");
+        para.data.stopCooperateSearch = $("#clienteleStatusSearch input:eq(2)").next().hasClass("layui-form-checked");
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            data : JSON.stringify(para),
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteles = data.clienteles;
+                //数据加载完成进行分页组件渲染
+                $rootScope.laypage({
+                    cont: 'page'
+                    ,pages: data.pages
+                    ,curr: pageNum
+                    ,skip: true
+                    ,jump: function(obj, first) {
+                        if (!first) {
+                            $scope.init(obj.curr);
+                        }
+                    }
+                });
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 新增选项卡
+     * 点击新增按钮/客户名称，增加一个选项卡
+     */
+    $scope.addTab = function (title,data,index) {
+        if (index != -1){
+            for (var i in $scope.tabArr){
+                if ($scope.tabArr[i].index == index){
+                    $("#tab"+index).click();
+                    return false;
+                }
+            }
+        }else{
+            data.clienteleNo = base.getTimeStamp(); //新增按钮，获取当前系统时间戳，作为客户编码使用
+            data.createTime = base.dateFormat(new Date()); //新增按钮，获取当前系统标准时间格式，作为创建时间使用
+        }
+        $scope.tabArr.push({
+            title : title,
+            data : data,
+            index : index
+        });
+    };
+    /**
+     * 初始化省级列表
+     */
+    $scope.initAddressProvince = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.addressProvinces = data.addressProvinces;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化市级列表
+     */
+    $scope.initAddressCity = function (code) {
+        var para = {};
+        para.code = code;
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            data : JSON.stringify(para),
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.addressCitys = data.addressCitys;
+            }else{
+                layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 监听省级列表切换事件
+     */
+    $rootScope.form.on('select(addressProvince)', function(data){
+        $scope.initAddressCity(data.value);
+    });
+    $scope.tabRenderFinish();
+    // $scope.initClienteleLevel();
+    // $scope.initClienteleType();
+    // $scope.initClienteleStatus();
+    // $scope.init(1);
+    // $scope.initAddressProvince();
+    // $scope.initBusinessType();
+    // $scope.initSettlementMethod();
+    // $scope.initPayMethod();
+    /**
+     * 测试数据
+     */
+    //客户级别
+    $scope.clienteleLevels = [
+        {
+            id : "0",
+            comment : "战略客户"
+        },
+        {
+            id : "1",
+            comment : "VIP客户"
+        },
+        {
+            id : "2",
+            comment : "项目客户"
+        },
+        {
+            id : "3",
+            comment : "大客户"
+        },
+        {
+            id : "4",
+            comment : "普通客户"
+        }
+    ];
+    //客户类型
+    $scope.clienteleTypes = [
+        {
+            id : "0",
+            comment : "临时客户"
+        },
+        {
+            id : "1",
+            comment : "合同客户"
+        }
+    ];
+    //客户状态
+    $scope.clienteleStatuss = [
+        {
+            id : "0",
+            comment : "正在合作"
+        },
+        {
+            id : "1",
+            comment : "停止业务"
+        },
+        {
+            id : "2",
+            comment : "停止合作"
+        }
+    ];
+    //行业类别
+    $scope.businessTypes = [
+        {
+            id : "0",
+            comment : "农林牧渔"
+        },
+        {
+            id : "1",
+            comment : "医药卫生"
+        },
+        {
+            id : "2",
+            comment : "建筑建材"
+        },
+        {
+            id : "3",
+            comment : "治金矿产"
+        },
+        {
+            id : "4",
+            comment : "石油化工"
+        }
+    ];
+    //结款方式
+    $scope.settlementMethods = [
+        {
+            id : "0",
+            comment : "月结付款"
+        },
+        {
+            id : "1",
+            comment : "日结付款"
+        },
+        {
+            id : "2",
+            comment : "返单付款"
+        },
+        {
+            id : "3",
+            comment : "货到付款"
+        }
+    ];
+    //支付方式
+    $scope.payMethods = [
+        {
+            id : "0",
+            comment : "现金"
+        },
+        {
+            id : "1",
+            comment : "银行卡"
+        },
+        {
+            id : "2",
+            comment : "支票"
+        },
+        {
+            id : "3",
+            comment : "承兑"
+        },
+        {
+            id : "4",
+            comment : "电子支付"
+        }
+    ];
+    //合同客户列表
+    $scope.clienteles = [
+        {
+            clienteleName : "上海九阳有限公司",
+            groupName : "远成物流",
+            clienteleNo : "001",
+            clienteleTypeComment : "临时客户",
+            clienteleTypeId : "0",
+            clienteleLevelComment : "战略客户",
+            clienteleLevelId : "0",
+            operationSonCompanySearch : "物流部",
+            createTime : "2017-10-02 10:20",
+            contactPerson : "赵长永",
+            clienteleStatusComment : "正在合作",
+            clienteleStatusId : "0",
+            industryType : "餐饮",
+            receiptMsg : "嘉定江桥",
+            goodsMsg : "玩具",
+            addressProvincesComment : "安徽省",
+            addressProvincesId : "1"
+        },
+        {
+            clienteleName : "杭州九阳有限公司",
+            groupName : "远成物流",
+            clienteleNo : "002",
+            clienteleTypeComment : "合同客户",
+            clienteleTypeId : "1",
+            clienteleLevelComment : "项目客户",
+            clienteleLevelId : "2",
+            operationSonCompanySearch : "物流部",
+            createTime : "2017-10-02 10:20",
+            contactPerson : "李嘉欣",
+            clienteleStatusComment : "停止合作",
+            clienteleStatusId : "2",
+            industryType : "餐饮",
+            receiptMsg : "嘉定江桥",
+            goodsMsg : "玩具",
+            addressProvincesComment : "江苏省",
+            addressProvincesId : "2"
+        }
+    ];
+    $rootScope.laypage({
+        cont: 'page'
+        ,pages: 100
+        ,curr: 1
+        ,skip: true
+        ,jump: function(obj, first) {
+            if (!first) {
+                layer.msg('第 ' + obj.curr + ' 页');
+            }
+        }
+    });
+    //省市
+    $scope.addressProvinces = [
+        {
+            id : "0",
+            comment : "北京市"
+        },
+        {
+            id : "1",
+            comment : "安徽省"
+        },
+        {
+            id : "2",
+            comment : "江苏省"
+        },
+        {
+            id : "3",
+            comment : "山东省"
+        },
+        {
+            id : "4",
+            comment : "辽宁省"
+        }
+    ];
+    //市区
+    $scope.addressCitys = [
+        {
+            id : "0",
+            comment : "六安市"
+        },
+        {
+            id : "1",
+            comment : "滁州市"
+        },
+        {
+            id : "2",
+            comment : "合肥市"
+        },
+        {
+            id : "3",
+            comment : "淮南市"
+        },
+        {
+            id : "4",
+            comment : "蚌埠市"
+        }
+    ];
+});

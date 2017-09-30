@@ -1,0 +1,135 @@
+<style>
+    .layui-tab{
+        overflow: visible;
+    }
+</style>
+<div class="container-fluid">
+    <div class="layui-tab layui-tab-brief" lay-filter="contractClientele" lay-allowclose="true">
+        <ul class="layui-tab-title">
+            <li class="layui-this">合同客户</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form clearAfter">
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入客户名称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">集团名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入集团名称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">运营分公司</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入运营分公司" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户级别</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">请选择客户级别</option>
+                                <option value="" selected="">全部</option>
+                                <option ng-repeat="clienteleLevel in clienteleLevels" value="{{clienteleLevel.id}}">{{clienteleLevel.comment}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入客户编号" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户类型</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">请选择客户类型</option>
+                                <option value="" selected="">全部</option>
+                                <option ng-repeat="clienteleType in clienteleTypes" value="{{clienteleType.id}}">{{clienteleType.comment}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn" style="padding-left: 15px;">
+                        <input type="checkbox" title="正在合作" checked="true">
+                        <input type="checkbox" title="停止业务" checked="true">
+                        <input type="checkbox" title="停止合作" checked="true">
+                    </div>
+                    <div class="layui-form-item fl cn" style="padding-left: 15px;">
+                        <button class="layui-btn">搜索</button>
+                        <button class="layui-btn">新增</button>
+                    </div>
+                </form>
+                <div class="layui-tab layui-tab-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this" style="position: relative;">
+                            小计
+                            <p style="position: absolute;left: 100px;bottom: 0;line-height: 30px;color: #333;">当前筛选条件下共有<span>16</span>个客户</p>
+                        </li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <table class="layui-table">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>客户名称</th>
+                                        <th>集团名称</th>
+                                        <th>客户编号</th>
+                                        <th>客户类型</th>
+                                        <th>客户级别</th>
+                                        <th>运营分公司</th>
+                                        <th>创建时间</th>
+                                        <th>联系人</th>
+                                        <th>客户状态</th>
+                                        <th>行业类别</th>
+                                        <th>常用收货信息</th>
+                                        <th>常用货品信息</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="clientele in clienteles">
+                                        <td>{{$index}}</td>
+                                        <td>{{clientele.clienteleName}}</td>
+                                        <td>{{clientele.groupName}}</td>
+                                        <td>{{clientele.clienteleNo}}</td>
+                                        <td>{{clientele.clienteleType}}</td>
+                                        <td>{{clientele.clienteleLevel}}</td>
+                                        <td>{{clientele.sonCompany}}</td>
+                                        <td>{{clientele.createTime}}</td>
+                                        <td>{{clientele.contactPerson}}</td>
+                                        <td>{{clientele.clienteleStatus}}</td>
+                                        <td>{{clientele.industryType}}</td>
+                                        <td>{{clientele.receiptMsg}}</td>
+                                        <td>{{clientele.goodsMsg}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="page" class="page"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

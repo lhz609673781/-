@@ -1,0 +1,145 @@
+"use strict";
+angular.module("app").controller("contractClienteleController",function ($rootScope,$scope,$http,config,base) {
+    $scope.initClienteleLevelFlag = false; //标记初始化客户级别选项请求是否结束
+    $scope.initClienteleTypeFlag = false; //标记初始化客户类型选项请求是否结束
+    /**
+     * 初始化客户级别选项
+     */
+    $scope.initClienteleLevel = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteleLevels = data.clienteleLevels;
+                $scope.initClienteleLevelFlag = true;
+                if ($scope.initClienteleLevelFlag && $scope.initClienteleTypeFlag){
+                    base.layui.use(['form']);
+                }
+            }else{
+                base.layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化客户类型选项
+     */
+    $scope.initClienteleType = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteleTypes = data.clienteleTypes;
+                $scope.initClienteleTypeFlag = true;
+                if ($scope.initClienteleLevelFlag && $scope.initClienteleTypeFlag){
+                    base.layui.use(['form']);
+                }
+            }else{
+                base.layer.msg(data.message);
+            }
+        });
+    };
+    /**
+     * 初始化合同客户列表
+     */
+    $scope.init = function () {
+        $http({
+            method : 'POST',
+            url : config.api_host + 'limit/api/limitList',
+            headers : {
+                'Content-Type': 'application/json',
+                "X-Token": $rootScope.token,
+                "X-Request-Type":"ajax"
+            }
+        }).success(function(data) {
+            if (data.success) {
+                $scope.clienteles = data.clienteles;
+            }else{
+                base.layer.msg(data.message);
+            }
+        });
+    };
+    $scope.initClienteleLevel();
+    $scope.initClienteleType();
+    $scope.init();
+    /**
+     * 测试数据
+     */
+    //客户级别选项
+    $scope.clienteleLevels = [
+        {
+            id : "0",
+            comment : "战略客户"
+        },
+        {
+            id : "1",
+            comment : "VIP客户"
+        },
+        {
+            id : "2",
+            comment : "项目客户"
+        },
+        {
+            id : "3",
+            comment : "大客户"
+        },
+        {
+            id : "4",
+            comment : "普通客户"
+        }
+    ];
+    //客户类型选项
+    $scope.clienteleTypes = [
+        {
+            id : "0",
+            comment : "临时客户"
+        },
+        {
+            id : "1",
+            comment : "合同客户"
+        }
+    ];
+    //合同客户列表
+    $scope.clienteles = [
+        {
+            clienteleName : "上海九阳有限公司",
+            groupName : "远成物流",
+            clienteleNo : "001",
+            clienteleType : "临时客户",
+            clienteleLevel : "战略客户",
+            sonCompany : "物流部",
+            createTime : "17-10-02 10:20",
+            contactPerson : "赵长永",
+            clienteleStatus : "正在合作",
+            industryType : "餐饮",
+            receiptMsg : "嘉定江桥",
+            goodsMsg : "玩具"
+        },
+        {
+            clienteleName : "杭州九阳有限公司",
+            groupName : "远成物流",
+            clienteleNo : "002",
+            clienteleType : "临时客户",
+            clienteleLevel : "战略客户",
+            sonCompany : "物流部",
+            createTime : "17-10-02 10:20",
+            contactPerson : "李嘉欣",
+            clienteleStatus : "正在合作",
+            industryType : "餐饮",
+            receiptMsg : "嘉定江桥",
+            goodsMsg : "玩具"
+        }
+    ];
+    base.layui.use(['form'], function(){});
+});

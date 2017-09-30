@@ -1,0 +1,29 @@
+<ul class="layui-nav layui-nav-tree layui-nav-side" id="navBar">
+
+    <li class="layui-nav-item" ng-repeat="menu in menus">
+        <a href="javascript:void(0);" ui-sref="main.{{menu.url}}" ng-if="!menu.children.length && menu.url!='baseData'"><i class="fa fa-folder-o custom-icon"></i>{{menu.text}}</a>
+        <a href="javascript:void(0);" data-src="static/baseData/index.html" id="baseData" ng-if="!menu.children.length && menu.url=='baseData'"><i class="fa fa-folder-o custom-icon"></i>{{menu.text}}</a>
+        <a href="javascript:void(0);" ng-if="menu.children.length"><i class="fa fa-folder-o custom-icon"></i>{{menu.text}}</a>
+        <dl class="layui-nav-child" ng-if="menu.children.length">
+            <dd ng-repeat="child in menu.children">
+                <a href="javascript:void(0);" ui-sref="main.{{child.url}}" ng-if="child.url!='baseData'"><i class="fa fa-folder-open-o custom-icon"></i>{{child.text}}</a>
+                <a href="javascript:void(0);" data-src="static/baseData/index.html" id="baseData" ng-if="child.url=='baseData'"><i class="fa fa-folder-open-o custom-icon"></i>{{child.text}}</a>
+            </dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:void(0);"><i class="fa fa-folder-o custom-icon"></i>功能维护</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:void(0);" ui-sref="main.menuManager"><i class="fa fa-folder-open-o custom-icon"></i>菜单管理</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:void(0);"><i class="fa fa-folder-o custom-icon"></i>权限设置</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:void(0);" ui-sref="main.baseLimitSet"><i class="fa fa-folder-open-o custom-icon"></i>基础权限设置</a></dd>
+        </dl>
+    </li>
+
+</ul>

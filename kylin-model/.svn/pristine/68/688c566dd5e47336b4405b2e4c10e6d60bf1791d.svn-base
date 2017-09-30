@@ -1,0 +1,111 @@
+"use strict";
+var app = angular.module("app",["ui.router","oc.lazyLoad"]);
+/**
+ * 全局配置路由对象
+ */
+app.run(function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+});
+/**
+ * 入口模块配置
+ */
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/login');
+    $stateProvider
+        .state('login', {
+            url: '/login',
+            views: {
+                '': {
+                    templateUrl: 'view/content/login.html',
+                    controller: "loginController",
+                    resolve: {
+                        lazyLoad: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                {
+                                    name: 'app',
+                                    files: ['js/controller/login.js']
+                                }
+                            ]);
+                        }]
+                    }
+                }
+            }
+        })
+        .state('main', {
+            url: '/main',
+            views: {
+                '': {
+                    templateUrl: 'view/main.html',
+                    controller : function ($rootScope,$scope,cookie,base) {
+                        //获取用户信息
+                        $scope.userName = cookie.get_userName();
+                        //判断用户是否登陆
+                        if ($scope.userName){
+                            var token = cookie.get_token();
+                            var reg = new RegExp('"',"g");
+                            $rootScope.token = token.replace(reg, "");
+                            //iframe临时模块，为了给iframe页面传递token
+                            window.token = token.replace(reg, "");
+                        }else{
+                            $rootScope.$state.go("login");
+                        }
+                        /**
+                         * 注销
+                         */
+                        $scope.logout = function () {
+                            cookie.del_user();
+                            $rootScope.$state.go("login");
+                        };
+                    }
+                },
+                'navBar@main': {
+                    templateUrl: 'view/navBar/navBar.html',
+                    controller: "navBarController",
+                    resolve: {
+                        lazyLoad: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                {
+                                    name: 'app',
+                                    files: ['js/controller/navBar.js']
+                                }
+                            ]);
+                        }]
+                    }
+                },
+                'content@main': {
+                    templateUrl: 'view/content/welcome.html',
+                    controller: "welcomeController",
+                    resolve: {
+                        lazyLoad: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                {
+                                    name: 'app',
+                                    files: ['js/controller/welcome.js']
+                                }
+                            ]);
+                        }]
+                    }
+                }
+            }
+        })
+        .state('main.baseLimitSet', {
+            url: '/baseLimitSet',
+            views: {
+                'content@main': {
+                    templateUrl: 'view/content/baseLimitSet.html',
+                    controller: "baseLimitSetController",
+                    resolve: {
+                        lazyLoad: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                {
+                                    name: 'app',
+                                    files: ['js/controller/baseLimitSet.js']
+                                }
+                            ]);
+                        }]
+                    }
+                }
+            }
+        })
+});

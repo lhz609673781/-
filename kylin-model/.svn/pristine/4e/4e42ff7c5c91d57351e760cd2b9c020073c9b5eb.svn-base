@@ -1,0 +1,450 @@
+<style>
+    .custom-tab-title{
+        border-bottom: 1px solid #5FB878;
+    }
+    .custom-tab-title .layui-this{
+        background: #5FB878;
+        color: #fff;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .custom-tab-title .layui-this:after{
+        border: none;
+    }
+    .layui-form-label b{
+        color: #f00;
+        margin-right: 5px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="layui-tab layui-tab-brief" lay-filter="contractClientele" lay-allowclose="true">
+        <ul class="layui-tab-title" id="layui-tab-title">
+            <li class="layui-this">合同客户管理</li>
+            <li ng-repeat="arr in tabArr" id="tab{{arr.index}}" repeat-finish="tabRenderFinish()">{{arr.title}}</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form clearAfter">
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入客户名称" class="layui-input" ng-model="clienteleNameSearch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">集团名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入集团名称" class="layui-input" ng-model="groupNameSearch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">运营分公司</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入运营分公司" class="layui-input" ng-model="operationSonCompanySearch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户级别</label>
+                        <div class="layui-input-inline" id="clienteleLevelSearch">
+                            <select>
+                                <option value="">请选择客户级别</option>
+                                <option value="" selected="">全部</option>
+                                <option ng-repeat="clienteleLevel in clienteleLevels" repeat-finish="formRenderFinish()" value="{{clienteleLevel.id}}">{{clienteleLevel.comment}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="请输入客户编号" class="layui-input" ng-model="clienteleNoSearch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn">
+                        <label class="layui-form-label">客户类型</label>
+                        <div class="layui-input-inline" id="clienteleTypeSearch">
+                            <select>
+                                <option value="">请选择客户类型</option>
+                                <option value="" selected="">全部</option>
+                                <option ng-repeat="clienteleType in clienteleTypes" repeat-finish="formRenderFinish()" value="{{clienteleType.id}}">{{clienteleType.comment}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item fl cn" style="padding-left: 15px;" id="clienteleStatusSearch">
+                        <input ng-repeat="clienteleStatus in clienteleStatuss" type="checkbox" title="{{clienteleStatus.comment}}" ng-checked="true">
+                    </div>
+                    <div class="layui-form-item fl cn" style="padding-left: 15px;">
+                        <button class="layui-btn" ng-click="init(1)">搜索</button>
+                        <button class="layui-btn" ng-click="addTab('新增合同客户',{},-1)">新增</button>
+                    </div>
+                </form>
+                <div class="layui-tab">
+                    <ul class="layui-tab-title custom-tab-title">
+                        <li class="layui-this">
+                            小计
+                            <p style="position: absolute;left: 100px;bottom: 0;line-height: 30px;color: #333;">当前筛选条件下共有{{clienteles.length}}个客户</p>
+                        </li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <table class="layui-table">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="200">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>客户名称</th>
+                                        <th>集团名称</th>
+                                        <th>客户编号</th>
+                                        <th>客户类型</th>
+                                        <th>客户级别</th>
+                                        <th>运营分公司</th>
+                                        <th>创建时间</th>
+                                        <th>联系人</th>
+                                        <th>客户状态</th>
+                                        <th>行业类别</th>
+                                        <th>常用收货信息</th>
+                                        <th>常用货品信息</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="clientele in clienteles">
+                                        <td>{{$index + 1}}</td>
+                                        <td><a href="javascript:void(0);" style="color: #009DDA;" ng-click="addTab(clientele.clienteleName,clientele,$index + 1)">{{clientele.clienteleName}}</a></td>
+                                        <td>{{clientele.groupName}}</td>
+                                        <td>{{clientele.clienteleNo}}</td>
+                                        <td>{{clientele.clienteleTypeComment}}</td>
+                                        <td>{{clientele.clienteleLevelComment}}</td>
+                                        <td>{{clientele.operationSonCompanySearch}}</td>
+                                        <td>{{clientele.createTime}}</td>
+                                        <td>{{clientele.contactPerson}}</td>
+                                        <td>{{clientele.clienteleStatusComment}}</td>
+                                        <td>{{clientele.industryType}}</td>
+                                        <td>{{clientele.receiptMsg}}</td>
+                                        <td>{{clientele.goodsMsg}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="page" class="page"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item" ng-repeat="arr in tabArr" repeat-finish="tabRenderFinish()">
+                <div class="layui-tab" style="overflow: visible">
+                    <ul class="layui-tab-title custom-tab-title">
+                        <li class="layui-this" style="position: static;">
+                            基本信息
+                            <p class="ellipsis" style="position: absolute;left: 100px;right: 15px;bottom: 0;line-height: 30px;color: #333;text-align: right;">
+                                <span style="margin-right: 15px;">登记员：{{rootUserName}}</span>
+                                <span style="margin-right: 15px;">客户编号：{{arr.data.clienteleNo}}</span>
+                                <span>创建时间：{{arr.data.createTime}}</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <form class="layui-form clearAfter">
+                                <div class="layui-form-group fl" style="width: 50%">
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>客户类型</label>
+                                            <div class="layui-input-inline" id="clienteleType">
+                                                <select>
+                                                    <option value="">请选择客户类型</option>
+                                                    <option ng-repeat="clienteleType in clienteleTypes" repeat-finish="formRenderFinish()" value="{{clienteleType.id}}" ng-selected="arr.data.clienteleTypeId == clienteleType.id">{{clienteleType.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>客户名称</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入客户名称" class="layui-input" ng-model="arr.data.clienteleName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>客户地址</label>
+                                            <div class="layui-input-inline" id="addressProvince">
+                                                <select lay-filter="addressProvince">
+                                                    <option value="">请选择省市</option>
+                                                    <option ng-repeat="addressProvince in addressProvinces" repeat-finish="formRenderFinish()" value="{{addressProvince.id}}" ng-selected="arr.data.addressProvincesId == addressProvince.id">{{addressProvince.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"></label>
+                                            <div class="layui-input-inline" id="addressCity">
+                                                <select>
+                                                    <option value="">请选择市区</option>
+                                                    <option value="" selected="">请选择市区</option>
+                                                    <option ng-repeat="addressCity in addressCitys" repeat-finish="formRenderFinish()" value="{{addressCity.id}}">{{addressCity.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"><b>*</b>详细地址</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入详细地址" class="layui-input" ng-model="addressDetail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">法人代表</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入法人代表" class="layui-input" ng-model="legalPerson">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">手机号码</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入手机号码" class="layui-input" ng-model="legalPersonPhone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>联系人</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入联系人" class="layui-input" ng-model="contactPerson">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">职务</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入职务" class="layui-input" ng-model="contactPersonPosition">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>手机号码</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入手机号码" class="layui-input" ng-model="contactPersonPhone">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">电话</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入电话" class="layui-input" ng-model="contactPositionTelephone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">运输方式</label>
+                                            <input type="checkbox" title="汽车" ng-checked="true" id="car">
+                                            <input type="checkbox" title="铁路" ng-checked="false" id="railway">
+                                            <input type="checkbox" title="航空" ng-checked="false" id="aviation">
+                                            <input type="checkbox" title="船舶" ng-checked="false" id="ship">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item-group fl" style="width: 50%;">
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">客户简称</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入客户简称" class="layui-input" ng-model="clienteleShortName">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">老系统编码</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入老系统编码" class="layui-input" ng-model="oldSystemCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>签约公司</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入签约公司" class="layui-input" ng-model="signedCompany">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>运营公司</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入运营公司" class="layui-input" ng-model="operationCompany">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">客户级别</label>
+                                            <div class="layui-input-inline" id="clienteleLevel">
+                                                <select>
+                                                    <option value="">请选择客户级别</option>
+                                                    <option value="" selected="">全部</option>
+                                                    <option ng-repeat="clienteleLevel in clienteleLevels" repeat-finish="formRenderFinish()" value="{{clienteleLevel.id}}">{{clienteleLevel.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>授信额度</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入授信额度" class="layui-input" ng-model="creditQuota" style="padding-right: 48px;">
+                                                <span style="position: absolute;right: 10px;top: 0px;line-height: 38px;">万元</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">行业类别</label>
+                                            <div class="layui-input-inline" id="businessType">
+                                                <select>
+                                                    <option value="">请选择行业类别</option>
+                                                    <option value="" selected="">全部</option>
+                                                    <option ng-repeat="businessType in businessTypes" repeat-finish="formRenderFinish()" value="{{businessType.id}}">{{businessType.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">客户状态</label>
+                                            <div class="layui-input-inline" id="clienteleStatus">
+                                                <select>
+                                                    <option value="">请选择客户状态</option>
+                                                    <option value="" selected="">全部</option>
+                                                    <option ng-repeat="clienteleStatus in clienteleStatuss" repeat-finish="formRenderFinish()" value="{{clienteleStatus.id}}">{{clienteleStatus.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">主营产品</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入主营产品" class="layui-input" ng-model="mainProduct">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"><b>*</b>合作业务</label>
+                                            <input type="checkbox" title="干线" ng-checked="true" id="trunkLine">
+                                            <input type="checkbox" title="提货" ng-checked="true" id="pickUp">
+                                            <input type="checkbox" title="配送" ng-checked="false" id="distribution">
+                                            <input type="checkbox" title="仓储" ng-checked="false" id="warehousing">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-tab" style="overflow: visible">
+                    <ul class="layui-tab-title custom-tab-title">
+                        <li class="layui-this">结款信息</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <form class="layui-form clearAfter">
+                                <div class="layui-form-group fl" style="width: 50%">
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">营业执照</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入营业执照" class="layui-input" ng-model="businessLicense">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">对账联系人</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入对账联系人" class="layui-input" ng-model="reconciliationContactPerson">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">对账人电话</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="请输入对账人电话" class="layui-input" ng-model="reconciliationPhone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="white-space: nowrap;"><b>*</b>开户行名称</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入开户行名称" class="layui-input" ng-model="openBankName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"><b>*</b>发票名称</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入发票名称" class="layui-input" ng-model="invoiceName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item-group fl" style="width: 50%;">
+                                    <div class="layui-form-group-child clearAfter">
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label"><b>*</b>结款方式</label>
+                                            <div class="layui-input-inline" id="settlementMethod">
+                                                <select>
+                                                    <option value="">请选择结款方式</option>
+                                                    <option value="" selected="">全部</option>
+                                                    <option ng-repeat="settlementMethod in settlementMethods" repeat-finish="formRenderFinish()" value="{{settlementMethod.id}}">{{settlementMethod.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item fl cn">
+                                            <label class="layui-form-label">支付方式</label>
+                                            <div class="layui-input-inline" id="payMethod">
+                                                <select>
+                                                    <option value="">请选择支付方式</option>
+                                                    <option value="" selected="">全部</option>
+                                                    <option ng-repeat="payMethod in payMethods" repeat-finish="formRenderFinish()" value="{{payMethod.id}}">{{payMethod.comment}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"><b>*</b>银行账号</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入银行账号" class="layui-input" ng-model="bankNum">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-group-child">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"><b>*</b>税号</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请输入税号" class="layui-input" ng-model="taxNum">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <form class="layui-form" style="text-align: right; padding-right: 15px;">
+                    <button class="layui-btn">取消</button>
+                    <button class="layui-btn">保存</button>
+                    <button class="layui-btn">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
