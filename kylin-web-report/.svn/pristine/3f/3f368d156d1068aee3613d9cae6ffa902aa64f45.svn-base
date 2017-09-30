@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+.select-company{float: left;margin-right: 30px;}
+.ranking-chart{width: 48%;float: left;}
+.right-charts{margin-left: 50%;}
+.data-content{margin-top: 23px;}
+#table-title th{cursor: pointer;}

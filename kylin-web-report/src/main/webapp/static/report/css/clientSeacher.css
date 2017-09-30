@@ -1,0 +1,171 @@
+/*闂佺娴氶崜娆撳矗閿熺姵鐒鹃柕濞垮劚閻庯拷*/
+@charset "utf-8";
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	color: #666;
+}
+
+/*闂佸憡鐗曢幊鎾绘晬濞嗘垳娌柨鐕傛嫹*/
+.wrap{
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 0;
+	bottom: 20px;
+	overflow: auto;
+}
+
+.layui-tab{
+	overflow: visible;
+}
+
+#page{
+	text-align: center;
+}
+
+.charts{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.charts .charts-left{
+	width: 64%;
+}
+
+.charts .charts-right{
+	width: 36%;
+	position: relative;
+}
+
+.charts .charts-item{
+	width: 25%;
+	position: relative;
+}
+
+.charts .charts-item-pic{
+	height: 200px;
+}
+#charts-item4-pic{
+	height:300px;
+}
+.charts .charts-item-value{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -12px;
+	z-index: 999;
+}
+
+.charts .charts-item-name{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	/*bottom: -8px;*/
+	z-index: 999;
+	color: #358ff0;
+    font-size: 16px;
+}
+.charts .charts-item-name b{
+    font-weight:normal;
+}
+
+.description{
+	padding: 0 20px;
+	line-height: 26px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.description dt{
+	font-size: 13px;
+}
+
+.description dd{
+	font-size: 13px;
+}
+
+.description dd b{
+	font-size: 15px;
+    font-family: "Microsoft Yahei";
+    color: #358ff0;
+    font-weight: bold;
+}
+.select-tab{
+	width:auto !important;
+	left:30px;
+}
+#CompanyName{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content-margin{
+	margin:0;
+}
+#select-form{
+	display: inline-block;
+}
+#select-form select{
+	width: 48px;
+	height: 28px;
+	cursor:pointer;
+}
+.layui-form-switch:before{
+	content:"按日查";
+	color:#358ff0;
+	float:right;
+}
+.layui-form-onswitch:before{
+	content:"按月查";
+	color:#fff;
+	float:left;
+}
+.layui-form-switch{
+	width:66px;
+	border:1px solid #358ff0;
+}
+.layui-form-onswitch{
+	border-color: #358ff0;
+    background-color: #358ff0;
+}
+.layui-tab-brief>.layui-tab-title .layui-this {
+    color: #358ff0;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+    border-bottom: 3px solid #358ff0;
+}
+.layui-form-switch i{
+	 background-color: #358ff0;
+}
+.layui-form-onswitch i{
+	left: 54px;
+	background-color: #fff;
+}
+.layui-form-select dl dd.layui-this {
+    background-color: #358ff0;
+}
+#laydate_table{
+	display:none;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #358ff0;
+}
+@media screen and (max-width:1250px){
+	.charts .charts-item-name b {
+		font-size:12px;
+	}
+}
+@media screen and (max-width:1200px){
+	.check-criteria{
+		display: block;
+	    margin-top: 46px;
+	}
+}

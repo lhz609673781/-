@@ -1,0 +1,31 @@
+#year,#month,#quarter,#week,#day,#groupName{
+	margin-right:6px;
+	color: #666666;
+}
+/*#month{
+	margin-left:35px;
+}*/
+#header-color span{
+	font-size: 15px;
+	margin-right: 30px;
+}
+#header-color b{
+	color:#F59C00;
+}
+/*响应式新的调整*/ 
+#terrace{
+	width:5%;
+}
+.btn,.btn-dao{
+	margin-right:1%;
+}
+@media (max-width:1280px) {
+#year,#month,#terrace,.btn,.btn-dao{
+		font-size:12px;
+	}
+}
+@media (max-width:1024px) {
+#year,#month,#terrace,.btn,.btn-dao{
+		font-size:10px;
+	}
+}

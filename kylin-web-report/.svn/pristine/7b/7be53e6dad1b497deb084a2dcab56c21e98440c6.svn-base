@@ -1,0 +1,154 @@
+/*# sourceMappingURL=main.css.map */
+/*order-detail*/
+.order-detail{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+}
+.order-detail ul{
+    border-bottom: 1px solid #ddd;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.order-detail ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.order-detail ul li span{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.order-detail ul .add a{ color: #72E8CC;}
+.order-detail ul .add span{
+    background: url("../images/addOrderAddBtn.png") 0 0 no-repeat;
+}
+.order-detail ul .import a{color: #62B6FF}
+.order-detail ul .import span{
+    background: url("../images/addOrderImportBtn.png") 0 0 no-repeat;
+}
+.order-info table{
+    padding-right: 10px;
+    padding-bottom: 16px;
+}
+.order-info table tr{margin-top: 20px;display: table-row;vertical-align: inherit;}
+.order-info table tr td{text-align: right;padding-top: 20px}
+.order-info table tr td:nth-child(odd){padding-left: 25px;padding-right: 10px}
+.order-info table input,.order-info table select{
+    border: 1px solid #ddd;
+    width: 160px;
+    height: 30px;
+    border-radius: 3px;
+}
+.order-info table tr td.time input{
+    width: 120px;
+    background: url("../images/calendarBtn.png") 95px center no-repeat;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.order-info table tr td.status select{
+    background: url("../images/DropDownArrow.png") 142px center no-repeat;
+    -webkit-appearance: none;
+    padding-left: 10px;
+    color: #999999;
+}
+.enquiry{
+    padding-right: 445px;
+}
+.searchinput{
+    width: 200px;
+    font-size: 14px;
+    color: #fff;
+    background: #4FE2BF;
+    border: none;
+    cursor: pointer;
+    float: left;
+    margin-left: 35px;
+}
+.orders{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.orders a:hover{text-decoration: underline}
+.orders tr td{
+    border: 1px solid #ddd;
+    height: 40px;
+}
+.orders .header-lf li,.orders .header-rt li{
+    display: inline-block;
+}
+.order-num{position: relative}
+.order-num .text-blue{color: #627DF4}
+.order-num input{visibility: hidden}
+.order-num label{
+    background: url("../images/checkedBox_nor.png") 0 0 no-repeat;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+}
+.order-num label.active{background: url("../images/checkedBox_checjed.png") 0 0 no-repeat}
+.orders .orders-header.active{background: #DDE8FA}
+.orders tr{background: #fff}
+.orders .orders-title{background: #F3F3F3}
+.orders .header-lf{padding-left: 10px}
+.orders .header-lf li.order-num{margin-left: 16px}
+.orders .header-lf li{
+    margin-right: 25px;
+}
+.orders .header-rt{margin-left: 260px}
+.orders .header-rt li{margin-right: 20px}
+.orders .register a{color: #ff5252}
+.order-untreated .enter a{color: #999999;}
+.order-untreated .edit a,.order-untreated .look a{color: #627DF4}
+.orders-title{background: #EEEEEE;text-align: center}
+.order-goods{text-align: center}
+.order-goods button{
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.order-goods .untreated button{background: #ff5252}
+.order-goods .transport button{background: #FACB00}
+.order-transport .enter a,.order-transport .look a{color: #627DF4}
+.order-sign .look a,.order-finish .look a{color: #627DF4}
+.order-goods .sign button{background: #38C36A}
+.button0 {background: #ff5252}
+.button1 {background: #FACB00}
+.button2 {background: #48D1CC}
+.button3 {background: #38C36A}
+.button4 {background: #CCCCCC}
+.pages{margin-top: 20px;margin-left: 20px;
+    height: 75px;}
+.pages a{
+    font-size: 12px;
+    color: #999999;
+    display: inline-block;
+    padding:6px 11px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-left: 5px;
+    background: #fff;
+}
+.pages span{
+    font-size: 12px;
+    color: #999999;
+}
+.pages a:hover{background: #4768f3;color: #fff}
+.pages .page-sum{padding:11px 13px}
+
+.eventsgray a{
+	color:#999999;
+	pointer-events: none;
+}

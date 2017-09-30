@@ -1,0 +1,185 @@
+.graphPie{
+	height: 350px;
+	display:inline-block;
+	margin-left: 0px;
+	position:relative;
+	width: 259px;
+}
+
+#graphTop{
+	float: left;
+	width: 100%;
+	/*height: 350px;*/
+}
+#graphCentre{
+	width: 100%;
+	overflow: hidden;
+	height: 350px;
+	padding: 10px 1%;
+	text-align: left;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+}
+#graphDescribe{
+	float: left;
+	width:32%;
+	height: 350px;
+	display:inline-block;
+}
+#graphRight{
+	float: left;
+	width:62%;
+	height: 350px;
+	display:inline-block;
+}
+#graphDescribe p{
+	margin-top: 25px;
+}
+.pie1-data{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 18px;
+    white-space: nowrap;
+    z-index:333;
+    font-weight: bold;
+}
+#label-img{
+	position:relative !important;
+}
+.time-img{
+	position:absolute !important;
+	top:-4px !important;
+}
+.month_nav{
+	width:44% !important;
+}
+.date_selector .year_nav {
+    width: 42% !important;
+    margin-right: 26px !important;
+}
+.date_selector{
+	top:22px !important;
+	left:0px !important;
+}
+.searchText{
+	border: 1px solid #e1e5ed;
+    border-radius: 3px;
+    width: 9.5%;
+    min-width:85px;
+    height: 22px;
+    
+}
+.searchSpan{
+	margin-left: 10px;
+}
+#form{
+	font-size: 15px;
+	color: #5e6063;
+	font-family: "Microsoft Yahei";
+}
+.spanText {
+	font-size: 15px;
+	font-family: "Microsoft Yahei";
+	color: #358ff0;
+	font-weight: bold;
+}
+#graphDescribe{
+	font-size: 13px;
+	font-family: "Microsoft Yahei";
+}
+.searchDiv{
+	position:relative;
+}
+.dateselected{
+	width:130px !important;
+}
+.serachIcon{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	background:url(../images/serachCustomer.png) no-repeat;
+	background-size:cover;
+	position:absolute;
+	top:3px;
+	right:4px;
+}
+#alertBg{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:rgba(0,0,0,0.7);
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+#alertDiv{
+	width:350px;
+	height:200px;
+	margin:auto;
+	position:absolute;
+	top: 0; left: 0; bottom: 0; right: 0; 
+	background:#FFF;
+	border-radius:5px;
+}
+.alertHead{
+	width:345px;
+	height:30px;
+	background:#71d2ff;
+	color:#FFF;
+	padding-left:5px;
+	line-height:30px;
+	border-radius:5px 5px 0 0;
+}
+.alertcontent{
+	width:100%;
+	height:170px;
+	position:relative;
+}
+.alertMessage{
+	position:absolute;
+	left:50%;
+	top:50%;
+	color:#71d2ff;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+.alertBtn{
+	position:absolute;
+	width:50px;
+	height:30px;
+	background:#71d2ff;
+	line-height:30px;
+	bottom:10px;
+	left:50%;
+	color:#FFF;
+	border-radius:5px;
+	transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	-o-transform:translateX(-50%);
+	-ms-transform:translateX(-50%);
+}
+@media screen and (max-width:1244px){
+	.depart{
+		width:500px !important;
+	}
+	.searchDiv{
+		border-radius:5px;
+		margin-top:10px;
+	}
+	.searchSpan{
+		margin-left:0px;
+		margin-top:10px;
+	}
+}

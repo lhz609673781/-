@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+.information_detail{
+	width:100%;
+}
+.information_detail li{
+    width: 43%;
+    padding: 0 10px;
+    background: #d9f0ff;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px #666;
+    float: left;
+    display: table;
+    height: 50px;
+}
+.information_detail li>span{
+	display: table-cell;
+	vertical-align: middle;
+}
+.mantenanceCost{
+	margin-top: 30px;
+	width: 350px;
+    margin-bottom: 20px;
+    float: left;
+    height: auto;
+    margin-left: 0px !important;
+}
+.descripInfo{
+	padding:10px;
+	background:#e7e7e7;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+    top: 10px;
+}
+.descripInfo dt{
+	font-size:16px;
+	font-weight:900;
+	line-height:26px;
+	border-bottom: 1px solid #ccc;
+}
+.descripInfo dd,.descripInfo dd ol{
+	margin-left:10px;
+	line-height: 25px;
+}
+.right-content{
+	width:35%;
+	float:right;
+	margin-left: 0%; 
+}
+.center-container{
+	margin: 0 35% 0 350px;
+}
+.pie-title{
+	position: absolute;
+    top: 6px;
+    text-align: center;
+    z-index: 999;
+    font-size: 17px;
+    width: 100%;
+}
+#car-proportion{
+	width:90%;
+	margin:0 auto;
+	height: 364px;
+	position: relative;
+}
+.layui-table th,.layui-table td{
+	font-weight:normal;
+	text-align: center;
+	padding: 9px 1px;
+}
+.layui-table th{
+	color:#358ff0;
+}
+.dataOut {
+    float: right;
+    margin-right: 10px;
+}
+#select-form{
+	display: inline-block;
+}
+.layui-form-select dl dd.layui-this {
+    background-color: #358ff0;
+}
+.parts-fee{
+	display: none;
+	width:90%;
+	margin:0 auto !important;
+	margin-top: 10px !important;
+}
+.deleteAll {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    position: absolute;
+    right: 6px;
+    top: 13px;
+    border-radius: 10px;
+    line-height: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+#selectSearch {
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 99999;
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+#selectSearch li {
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    cursor: pointer;
+}
+.noMatch{
+	color: #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+@media screen and (max-width:1250px){
+	.mantenanceCost{
+		width: 250px;
+	}
+	.totalInfo{
+		font-size: 12px;
+	}
+	.information_detail li{
+	    width: 41%;
+	    font-size: 12px;
+	    height: 50px
+	}
+	.descripInfo{
+		margin-top: 0px;
+	}
+	.descripInfo dt{
+		font-size: 14px;
+	}
+	.descripInfo dd, .descripInfo dd ol{
+		font-size: 12px;
+		line-height: 19px;
+	}
+	.center-container {
+	    margin: 0 35% 0 250px;
+	}
+}

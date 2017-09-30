@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+.left-container{width: 35%;float: left}
+.pie-container, #pie-container,.spider-map{
+	height: 350px;
+	width: 100%;
+}
+.spider-map{height: 400px;}
+.pitCharts-title{
+	text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: #666;
+    margin-top: 15px;
+}
+.right-container{margin-left: 35%;}
+.cost-income{width: 100%;}
+.income-index{margin-top: 100px;}
+.spider-map{position: relative;margin-top: 80px;}
+.spider-container, canvas{height: 100% !important;width: 100% !important;}
+.bar-summary{text-align: center;}
+.bar-summary p{
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid #000;
+	text-align: center;
+}
+.colunm-summary{margin-top: 16px;}
+.spider-swiper{width: 95% !important;}
+.spider-map .swiper-pagination-bullet-active {background: #275586 !important;}
+.turn-to-next{
+	float: right;
+    font-size: 19px;
+    font-weight: 900;
+    color: #35a9ff;
+    cursor: pointer;
+}

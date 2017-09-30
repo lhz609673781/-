@@ -1,0 +1,36 @@
+/* 鍒濆鍖� */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td { margin: 0; padding: 0; border: 0;box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+html { color: #333;height: 100%;  }
+body { height:100%;background:#fff;font-size:16px;}
+body,button,input,select,textarea,a{ font-family: 'Microsoft Yahei';}
+ul,ol,li,dl,dd,dt{list-style: none;}
+em,i{ font-style: normal; }
+a { text-decoration: none;}
+a:hover { text-decoration: none; }
+legend { color: #333; }
+fieldset,img { border: 0; }
+img{vertical-align: top;}
+button { cursor: pointer; }
+input:-webkit-autofill {
+ -webkit-box-shadow: 0 0 0px 1000px white inset;
+ -webkit-text-fill-color: #333;
+}
+/*瑙ｅ喅IE鍥剧墖缂╂斁澶辩湡*/
+img { -ms-interpolation-mode: bicubic; }
+/*娓呴櫎娴姩*/
+.clearfix:after { content: ''; display: block; height: 0; clear: both; }
+.clearfix { zoom: 1; }
+.clear { clear: both; }
+/*杩炵画鑻辨枃銆佹暟瀛楁崲琛�*/
+.wordwrap { word-break: break-all; word-wrap: break-word; }
+/*鍗曡鏂囧瓧瓒呭嚭鏄剧ず鐪佺暐鍙�*/
+.omg{overflow: hidden; text-overflow: ellipsis; white-space:nowrap;}
+.hide {display: none;}
+.fr{float:right;display: block;}
+.fl{float:left;}
+input{outline:none;}
+/* placeholder瀛椾綋棰滆壊 */
+input::-webkit-input-placeholder {color:#adadad;}
+input:-moz-placeholder {color:#adadad;}
+input::-moz-placeholder {color:#adadad;}
+input:-ms-input-placeholder {color:#adadad;}

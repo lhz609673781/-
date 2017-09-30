@@ -1,0 +1,89 @@
+.bg{
+    background: url("../images/bg.png") center -100px no-repeat;
+    height: 100%;
+    position: relative;
+}
+.logo{height: 350px}
+.logo a{
+    width: 380px;
+    height: 125px;
+    display: inline-block;
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    margin-left: -191px;
+}
+.loginBoxBg{
+    background: url("../images/loginBoxBg.png") no-repeat;
+    width: 529px;
+    height: 346px;
+    margin: 0 auto;
+}
+.login-box{
+    width: 300px;
+    margin: auto;
+    padding-top: 50px;
+}
+.control{position: relative}
+.control input{
+    width: 300px;
+    height: 40px;
+    font-size: 12px;
+    color: #999999;
+    background: #F8F8F8;
+    margin-top: 15px;
+    padding-left: 50px;
+    outline: none;
+}
+.control span{
+    display: inline;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.control span.user{background:#4868f2 url("../images/userIc.png") center center no-repeat}
+.control span.pwd{background:#4868f2 url("../images/passwordIc.png") center center no-repeat}
+.control span.code{background:#4868f2 url("../images/codeIc.png") center center no-repeat}
+.control .confirm{
+    position: absolute;
+    width: 106px;
+    height: 40px;
+    top: 15px;
+    right: 0;
+}
+.control-checkbox{
+    font-size: 12px;
+    margin:10px 0;
+}
+.control-checkbox label{
+    background: url("../images/keepPasswordIc_nor.png") 0 0 no-repeat;
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.control-checkbox label.active{
+    background: url("../images/keepPasswordIc_checked.png") 0 0 no-repeat;
+}
+.control-checkbox input{
+    margin: 0 -5px 0 -10px;
+    visibility: hidden;
+}
+.control-checkbox span{
+    display: inline-block;
+    height: 12px;
+    line-height: 12px;
+    vertical-align: text-top;
+}
+.submit input{
+    background: #4868f2;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    cursor: pointer;
+}

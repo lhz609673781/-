@@ -1,0 +1,250 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.header {
+	width: 100%;
+	height: 80px;
+	background: url("../images/topNavBg.png") no-repeat center top;
+	background-size: 100% 100%;
+}
+
+.header h1 {
+	float: left;
+	padding-left: 20px;
+	width: 50%;
+}
+
+.header h1 a {
+	display: block;
+	height: 80px;
+	width: 242px;
+}
+
+.header h1 img {
+	width: 242px;
+	height: 26px;
+	margin: 27px 0;
+}
+
+.header .person-info {
+	width: 50%;
+	height: 80px;
+	padding: 25px 0;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.header .person-info a {
+	display: block;
+	height: 100%;
+}
+
+.header .person-info .person-ico {
+	display: inline-block;
+	height: 30px;
+	width: 25px;
+	background: url("../images/navUserIc.png") no-repeat center center;
+}
+
+.header .person-info span {
+	line-height: 30px;
+	display: inline-block;
+	font-size: 12px;
+	color: #ccc;
+	height: 30px;
+}
+
+.header .person-info .select-ico {
+	width: 25px;
+	height: 30px;
+	display: inline-block;
+	background: url("../images/navArrowIc.png") no-repeat center center;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+}
+
+.main .nav {
+	width: 180px;
+	background: #262a33;
+	position: fixed;
+	left: 0;
+	top: 80px;
+}
+
+.main .nav .parent-ul {
+	width: 100%;
+}
+
+.main .nav .parent-ul .parent-li {
+	width: 100%;
+	min-height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	color: #fff;
+}
+
+.main .nav .parent-ul .parent-li a.parent-link {
+	padding-left: 35px;
+	width: 100%;
+	height: 40px;
+	color: #fff;
+}
+
+.main .nav .parent-ul .parent-li a.parent-link .arrow {
+	font-size: 18px;
+	float: right;
+	margin-right: 15px;
+	font-style: normal;
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main .nav .parent-ul .parent-li a.parent-link .arrow.plus:before {
+	content: "+";
+}
+
+.main .nav .parent-ul .active a.parent-link {
+	background-color: #4fe2bf !important;
+}
+
+.main .nav .parent-ul .active .arrow:before {
+	content: "-" !important;
+}
+
+.main .nav .parent-ul .nav1 .parent-link {
+	background: url("../images/sideBarOrderIc.png") no-repeat 15px center;
+}
+
+.main .nav .parent-ul .nav2 .parent-link {
+	background: url("../images/sideBarCodeIc.png") no-repeat 15px center;
+}
+
+.main .nav .sub-ul {
+	width: 100%;
+	display: none;
+}
+
+.main .nav .sub-ul li {
+	width: 100%;
+	height: 40px;
+}
+
+.main .nav .sub-ul li a {
+	line-height: 40px;
+	color: #fff;
+	font-size: 14px;
+	padding-left: 30px;
+}
+
+.main .nav .sub-ul li a i {
+	font-style: normal;
+	font-size: 10px;
+	padding: 0 5px;
+}
+
+.main .main-content {
+	width: 100%;
+	height: 100%;
+	background: #F3F3F3;
+	padding-left: 180px;
+}
+
+.main .main-content .position {
+	width: 100%;
+	height: 30px;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	font: 400 12px/30px "Microsoft Yahei";
+}
+
+.main .main-content .position span {
+	color: #999;
+}
+
+.main .main-content .position span.icon {
+	padding: 0 8px;
+}
+
+.main .main-content .position a {
+	color: #486aff;
+}
+
+.main .main-content .tab-hd {
+	width: 100%;
+	height: 40px;
+	padding: 0 20px;
+	border-bottom: 1px solid #4768F3;
+}
+
+.main .main-content .tab-hd ul {
+	width: 100%;
+	height: 100%;
+	padding-top: 6px;
+}
+
+.main .main-content .tab-hd ul li {
+	cursor: pointer;
+	float: left;
+	margin-right: 10px;
+	width: 150px;
+	height: 34px;
+	text-align: center;
+	font-size: 14px;
+	color: #476bff;
+	line-height: 32px;
+	border: 1px solid #4768F3;
+	position: relative;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.main .main-content .tab-hd ul li span {
+	padding: 0 5px;
+}
+
+.main .main-content .tab-hd ul li .close {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	font-size: 16px;
+	line-height: 16px;
+	color: #fff;
+}
+
+.main .main-content .tab-hd ul li.active, .main .main-content .tab-hd ul li:hover
+	{
+	background: #4768F3;
+	color: #fff;
+}
+
+.main .main-content .tab-hd ul li.active .close, .main .main-content .tab-hd ul li:hover .close
+	{
+	color: #fff;
+}
+
+.main .main-content .J_mainContent {
+	width: 100%;
+	padding: 20px;
+}
+.out{
+	float: right;
+	margin-right: 25px;
+	display: none;
+}
+
+.out a{
+	font-size: 12px;
+	color: #ccc;
+}
+.out a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+
+/*# sourceMappingURL=main.css.map */
